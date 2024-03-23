@@ -10,6 +10,7 @@ include("./header.php");
             <tr>
                 <td>DATE</td>
                 <td>UNIT</td>
+                <td>REJECT</td>
             </tr>
         </thead>
         <tbody>
@@ -23,7 +24,7 @@ include("./header.php");
 
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        echo "<td>" . $row['date'] . "</td><td>" . $row['unit'] . " kWh</td><tr>";
+                        echo "<td>" . $row['date'] . "</td><td>" . $row['unit'] ."</td><td>". $row['reject']. " </td><tr>";
                     }
                 }
                 // $connection->close();
@@ -281,7 +282,9 @@ include("./header.php");
             <h2>ADD DATA</h2>
             <input type="date" name="date" required placeholder="date" />
             <br />
-            <input type="text" name="unit" required placeholder="Unit-kWh" />
+            <input type="text" name="unit" required placeholder="Generate Unit" />
+            <br />
+            <input type="text" name="reject" required placeholder="Reject Unit" />
             <br />
             <input type="submit" />
             <button onclick="closePopupForm()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
