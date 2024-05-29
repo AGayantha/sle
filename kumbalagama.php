@@ -85,379 +85,379 @@ include("./header.php");
 
     <div class="card">
 
-<!-- Turbine -->
-<div class="form-container">
-    <form id="turbineForm">
-        <?php
-        include 'config.php';
-        $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='1' ";
-        $result = mysqli_query($connection, $sql);
-        $color = $result->fetch_assoc();
-        echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Turbine</a>";
-        echo "<input style='background-color :".$color['color'].";' type='text'>";
+        `<!-- Turbine -->
+        <div class="form-container">
+            <form id="turbineForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='1' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Turbine</a>";
+                echo "<input style='background-color :".$color['color'].";' type='text'>";
 
-        ?>
-    </form>
-</div>
+                ?>
+            </form>
+        </div>
 
-<!-- Hydraulic Unit -->
-<div class="form-container">
-    <form id="hydraulicUnitForm">
-        <?php
-        include 'config.php';
-        $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='2' ";
-        $result = mysqli_query($connection, $sql);
-        $color = $result->fetch_assoc();
-        echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Hydraulic Unit</a>";
-        echo "<input style='background-color :".$color['color'].";
-        ' type='text'>";
-        ?>
-    </form>
-</div>
+        <!-- Hydraulic Unit -->
+        <div class="form-container">
+            <form id="hydraulicUnitForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='2' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Hydraulic Unit</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
+                ?>
+            </form>
+        </div>
 
-<!-- Lubrication System -->
-<div class="form-container">
-    <form id="lubricationSystemForm">
-        <?php
-        include 'config.php';
-        $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='3' ";
-        $result = mysqli_query($connection, $sql);
-        $color = $result->fetch_assoc();
-        echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Lubrication System</a>";
-        echo "<input style='background-color :".$color['color'].";
-        ' type='text'>";
+        <!-- Lubrication System -->
+        <div class="form-container">
+            <form id="lubricationSystemForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='3' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Lubrication System</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-        ?>
-    </form>
-</div>
+                ?>
+            </form>
+        </div>
 
-<!-- Generator -->
-<div class="form-container">
-    <form id="generatorForm">
-        <?php
-        include 'config.php';
-        $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='4' ";
-        $result = mysqli_query($connection, $sql);
-        $color = $result->fetch_assoc();
-        echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Generator</a>";
-        echo "<input style='background-color :".$color['color'].";
-        ' type='text'>";
+        <!-- Generator -->
+        <div class="form-container">
+            <form id="generatorForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='4' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Generator</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-        ?>
-    </form>
-</div>
+                ?>
+            </form>
+        </div>
 
-<!-- Dewatering system -->
-<div class="form-container">
-    <form id="dewateringSystemForm">
-        <?php
-        include 'config.php';
-        $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='5' ";
-        $result = mysqli_query($connection, $sql);
-        $color = $result->fetch_assoc();
-        echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Dewatering System</a>";
-        echo "<input style='background-color :".$color['color'].";
-        ' type='text'>";
+        <!-- Dewatering system -->
+        <div class="form-container">
+            <form id="dewateringSystemForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='5' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Dewatering System</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-        ?>
-    </form>
-</div>
+                ?>
+            </form>
+        </div>
 
-<!-- Medium voltage panel -->
-<div class="form-container">
-    <form id="mediumVoltagePanelForm">
-        <?php
-        include 'config.php';
-        $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='6' ";
-        $result = mysqli_query($connection, $sql);
-        $color = $result->fetch_assoc();
-        echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Medium Voltage Panel</a>";
-        echo "<input style='background-color :".$color['color'].";
-        ' type='text'>";
+        <!-- Medium voltage panel -->
+        <div class="form-container">
+            <form id="mediumVoltagePanelForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='6' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Medium Voltage Panel</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-        ?>
-    </form>
-</div>
+                ?>
+            </form>
+        </div>
 
 
-<!-- Low voltage Panel -->
-<div class="form-container">
-    <form id="LowvoltagePanelForm">
-        <?php
-        include 'config.php';
-        $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='7' ";
-        $result = mysqli_query($connection, $sql);
-        $color = $result->fetch_assoc();
-        echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Low voltage Panel</a>";
-        echo "<input style='background-color :".$color['color'].";
-        ' type='text'>";
+        <!-- Low voltage Panel -->
+        <div class="form-container">
+            <form id="LowvoltagePanelForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='7' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Low voltage Panel</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-        ?>
-    </form>
-</div>
+                ?>
+            </form>
+        </div>
 
-<div class="card">
+        <div class="card">
 
-<!-- Battery Pack -->
-<div class="form-container">
-    <form id="batteryPackForm">
-        <?php
-        include 'config.php';
-        $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='8' ";
-        $result = mysqli_query($connection, $sql);
-        $color = $result->fetch_assoc();
-        echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Battery Pack</a>";
-        echo "<input style='background-color :".$color['color'].";
-        ' type='text'>";
+        <!-- Battery Pack -->
+        <div class="form-container">
+            <form id="batteryPackForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='8' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Battery Pack</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-        ?>
-    </form>
-</div>
+                ?>
+            </form>
+        </div>
 
-<!-- Control Panel -->
-<div class="form-container">
-    <form id="controlPanelForm">
-        <?php
-        include 'config.php';
-        $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='9' ";
-        $result = mysqli_query($connection, $sql);
-        $color = $result->fetch_assoc();
-        echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Control Panel</a>";
-        echo "<input style='background-color :".$color['color'].";
-        ' type='text'>";
+        <!-- Control Panel -->
+        <div class="form-container">
+            <form id="controlPanelForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='9' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Control Panel</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-        ?>
-    </form>
-</div>
+                ?>
+            </form>
+        </div>
 
-<!-- Station service Panel -->
-<div class="form-container">
-    <form id="stationServicePanelForm">
-        <?php
-        include 'config.php';
-        $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='10' ";
-        $result = mysqli_query($connection, $sql);
-        $color = $result->fetch_assoc();
-        echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Station Service Panel</a>";
-        echo "<input style='background-color :".$color['color'].";
-        ' type='text'>";
+        <!-- Station service Panel -->
+        <div class="form-container">
+            <form id="stationServicePanelForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='10' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Station Service Panel</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-        ?>
-    </form>
-</div>
+                ?>
+            </form>
+        </div>
 
-<!-- Motor control Panel -->
-<div class="form-container">
-    <form id="motorControlPanelForm">
-        <?php
-        include 'config.php';
-        $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='11' ";
-        $result = mysqli_query($connection, $sql);
-        $color = $result->fetch_assoc();
-        echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Motor Control Panel</a>";
-        echo "<input style='background-color :".$color['color'].";
-        ' type='text'>";
+        <!-- Motor control Panel -->
+        <div class="form-container">
+            <form id="motorControlPanelForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='11' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Motor Control Panel</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-        ?>
-    </form>
-</div>
+                ?>
+            </form>
+        </div>
 
-<!-- Decentralized control common -->
-<div class="form-container">
-    <form id="decentralizedControlCommonForm">
-        <?php
-        include 'config.php';
-        $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='12' ";
-        $result = mysqli_query($connection, $sql);
-        $color = $result->fetch_assoc();
-        echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Decentralized Control Common</a>";
-        echo "<input style='background-color :".$color['color'].";
-        ' type='text'>";
+        <!-- Decentralized control common -->
+        <div class="form-container">
+            <form id="decentralizedControlCommonForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='12' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Decentralized Control Common</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-        ?>
-    </form>
-</div>
+                ?>
+            </form>
+        </div>
 
-<div class="card">
-<!-- Inlet valve and control system -->
-<div class="form-container">
-    <form id="inletValveControlForm">
-        <?php
-        include 'config.php';
-        $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='13' ";
-        $result = mysqli_query($connection, $sql);
-        $color = $result->fetch_assoc();
-        echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Inlet Valve and Control System</a>";
-        echo "<input style='background-color :".$color['color'].";
-        ' type='text'>";
+        <div class="card">
+        <!-- Inlet valve and control system -->
+        <div class="form-container">
+            <form id="inletValveControlForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='13' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Inlet Valve and Control System</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-        ?>
-    </form>
-</div>
+                ?>
+            </form>
+        </div>
 
-<!-- By pass valve and control system (water Bypass) -->
-<div class="form-container">
-    <form id="bypassValveControlForm">
-        <?php
-        include 'config.php';
-        $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='14' ";
-        $result = mysqli_query($connection, $sql);
-        $color = $result->fetch_assoc();
-        echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>By pass Valve and Control System</a>";
-        echo "<input style='background-color :".$color['color'].";
-        ' type='text'>";
+        <!-- By pass valve and control system (water Bypass) -->
+        <div class="form-container">
+            <form id="bypassValveControlForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='14' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>By pass Valve and Control System</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-        ?>
-    </form>
-</div>
+                ?>
+            </form>
+        </div>
 
-<!-- Auxiliary Generator (outside) -->
-<div class="form-container">
-    <form id="auxiliaryGeneratorForm">
-        <?php
-        include 'config.php';
-        $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='15' ";
-        $result = mysqli_query($connection, $sql);
-        $color = $result->fetch_assoc();
-        echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Auxiliary Generator (outside)</a>";
-        echo "<input style='background-color :".$color['color'].";
-        ' type='text'>";
+        <!-- Auxiliary Generator (outside) -->
+        <div class="form-container">
+            <form id="auxiliaryGeneratorForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='15' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Auxiliary Generator (outside)</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-        ?>
-    </form>
-</div>
+                ?>
+            </form>
+        </div>
 
-<!-- Transformer -->
-<div class="form-container">
-    <form id="transformerForm">
-        <?php
-        include 'config.php';
-        $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='16' ";
-        $result = mysqli_query($connection, $sql);
-        $color = $result->fetch_assoc();
-        echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Transformer</a>";
-        echo "<input style='background-color :".$color['color'].";
-        ' type='text'>";
+        <!-- Transformer -->
+        <div class="form-container">
+            <form id="transformerForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='16' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Transformer</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-        ?>
-    </form>
-</div>
+                ?>
+            </form>
+        </div>
 
-<!-- CT PT Transformer -->
-<div class="form-container">
-    <form id="ctPtTransformerForm">
-        <?php
-        include 'config.php';
-        $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='17' ";
-        $result = mysqli_query($connection, $sql);
-        $color = $result->fetch_assoc();
-        echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>CT PT Transformer</a>";
-        echo "<input style='background-color :".$color['color'].";
-        ' type='text'>";
+        <!-- CT PT Transformer -->
+        <div class="form-container">
+            <form id="ctPtTransformerForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='17' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>CT PT Transformer</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-        ?>
-    </form>
-</div>
+                ?>
+            </form>
+        </div>
 
-<!-- Auto Re-closer -->
-<div class="form-container">
-    <form id="autoRecloserForm">
-        <?php
-        include 'config.php';
-        $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='18' ";
-        $result = mysqli_query($connection, $sql);
-        $color = $result->fetch_assoc();
-        echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Auto Re-closer</a>";
-        echo "<input style='background-color :".$color['color'].";
-        ' type='text'>";
+        <!-- Auto Re-closer -->
+        <div class="form-container">
+            <form id="autoRecloserForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='18' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Auto Re-closer</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-        ?>
-    </form>
-</div>
+                ?>
+            </form>
+        </div>
 
-<!-- Mechanical Bypass unit (33,000) -->
-<div class="form-container">
-    <form id="mechanicalBypassForm">
-        <?php
-        include 'config.php';
-        $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='19' ";
-        $result = mysqli_query($connection, $sql);
-        $color = $result->fetch_assoc();
-        echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Mechanical Bypass unit (33,000)</a>";
-        echo "<input style='background-color :".$color['color'].";
-        ' type='text'>";
+        <!-- Mechanical Bypass unit (33,000) -->
+        <div class="form-container">
+            <form id="mechanicalBypassForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='19' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Mechanical Bypass unit (33,000)</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-        ?>
-    </form>
-</div>
+                ?>
+            </form>
+        </div>
 
-<!-- Overhead crane -->
-<div class="form-container">
-    <form id="overheadCraneForm">
-        <?php
-        include 'config.php';
-        $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='20' ";
-        $result = mysqli_query($connection, $sql);
-        $color = $result->fetch_assoc();
-        echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Overhead Crane</a>";
-        echo "<input style='background-color :".$color['color'].";
-        ' type='text'>";
-        ?>
-    </form>
-</div>
-</div>
- 
-</div> <!-- card end -->
+        <!-- Overhead crane -->
+        <div class="form-container">
+            <form id="overheadCraneForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='20' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Overhead Crane</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
+                ?>
+            </form>
+        </div>
+        </div>
+    
+    </div> <!-- card end -->
 
-    <!-- item status End -->
+        <!-- item status End -->
 
-    <div id="popup-form" class="popup_form">
-        <form action="./add_kumbalgamuwa.php" method="post">
-            <h2>ADD DATA</h2>
-            <input type="date" name="date" required placeholder="date" />
-            <br />
-            <input type="text" name="unit" required placeholder="Unit-kWh" />
-            <br />
-            <input type="submit" />
-            <button onclick="closePopupForm()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
-        </form>
+        <div id="popup-form" class="popup_form">
+            <form action="./add_kumbalgamuwa.php" method="post">
+                <h2>ADD DATA</h2>
+                <input type="date" name="date" required placeholder="date" />
+                <br />
+                <input type="text" name="unit" required placeholder="Unit-kWh" />
+                <br />
+                <input type="submit" />
+                <button onclick="closePopupForm()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+            </form>
+        </div>
+
+        <div id="popup-form2" class="popup_form">
+            <form action="./generate_kumbalgamuwa.php" method="post">
+                <h2>Date</h2>
+                <input type="date" name="date" required placeholder="date" />
+                <br />
+                <input type="submit" />
+                <button onclick="closePopupForm()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+            </form>
+        </div>
+
+        <div id="popup-form3" class="popup_form">
+            <form action="./shift_kumbalgamuwa.php" method="post">
+                <h2>Date</h2>
+                <input type="date" name="date" required placeholder="Date" />
+                <br />
+                <input type="text" name="name" required placeholder="Name" />
+                <br />
+                <input type="number" name="number" required placeholder="Contact Number" />
+                <br />
+                <input type="submit" />
+                <button onclick="closePopupForm()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+            </form>
+        </div>
+
+        <div id="popup-form4" class="popup_form">
+            <form action="./delete_kumbalgamuwa.php" method="post">
+                <h2>Date</h2>
+                <input type="date" name="date" required placeholder="Date" />
+                <br />
+                <input type="submit" />
+                <button onclick="closePopupForm()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+            </form>
+        </div>
+
     </div>
-
-    <div id="popup-form2" class="popup_form">
-        <form action="./generate_kumbalgamuwa.php" method="post">
-            <h2>Date</h2>
-            <input type="date" name="date" required placeholder="date" />
-            <br />
-            <input type="submit" />
-            <button onclick="closePopupForm()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
-        </form>
-    </div>
-
-    <div id="popup-form3" class="popup_form">
-        <form action="./shift_kumbalgamuwa.php" method="post">
-            <h2>Date</h2>
-            <input type="date" name="date" required placeholder="Date" />
-            <br />
-            <input type="text" name="name" required placeholder="Name" />
-            <br />
-            <input type="number" name="number" required placeholder="Contact Number" />
-            <br />
-            <input type="submit" />
-            <button onclick="closePopupForm()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
-        </form>
-    </div>
-
-    <div id="popup-form4" class="popup_form">
-        <form action="./delete_kumbalgamuwa.php" method="post">
-            <h2>Date</h2>
-            <input type="date" name="date" required placeholder="Date" />
-            <br />
-            <input type="submit" />
-            <button onclick="closePopupForm()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
-        </form>
-    </div>
-
-</div>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
@@ -465,9 +465,13 @@ include("./header.php");
     include 'config.php';
 
     $sql = "SELECT date, unit
+    FROM (
+        SELECT id, date, unit
         FROM kumbalgamuwa
-        ORDER BY id ASC
-        LIMIT 10";
+        ORDER BY id DESC
+        LIMIT 10
+    ) sub
+    ORDER BY id ASC";
 
     $result = $connection->query($sql);
 

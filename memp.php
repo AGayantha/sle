@@ -333,9 +333,13 @@ include("./header.php");
     include 'config.php';
 
     $sql = "SELECT date, unit
+    FROM (
+        SELECT id, date, unit
         FROM memp
-        ORDER BY id ASC
-        LIMIT 10";
+        ORDER BY id DESC
+        LIMIT 10
+    ) sub
+    ORDER BY id ASC";
 
     $result = $connection->query($sql);
 

@@ -83,7 +83,10 @@ nav a:hover {
   .menu li a :hover{
     color: white;
   }
-  
+
+  .menu ul li.active {
+    background-color: #131922;
+  }
 #logo{
     font-family: 'Inter', sans-serif;
     height: 40px;
@@ -131,15 +134,5 @@ nav a:hover {
 }
 
 /* template css end */
-
-
-
-
-
-
-
-
-
-
 
 

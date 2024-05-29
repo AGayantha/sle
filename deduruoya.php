@@ -284,133 +284,133 @@ include("./header.php");
     </div>
 
     <div class="card">
-    <!-- Inlet valve and control system -->
-    <div class="form-container">
-        <form id="inletValveControlForm">
-            <?php
-            include 'config.php';
-            $sql = "SELECT * FROM status_deduruoya WHERE id='13' ";
-            $result = mysqli_query($connection, $sql);
-            $color = $result->fetch_assoc();
-            echo "<a href='update_deduruoya_status.php?id=$color[id]'>Inlet Valve and Control System</a>";
-            echo "<input style='background-color :".$color['color'].";
-            ' type='text'>";
+        <!-- Inlet valve and control system -->
+        <div class="form-container">
+            <form id="inletValveControlForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_deduruoya WHERE id='13' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_deduruoya_status.php?id=$color[id]'>Inlet Valve and Control System</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-            ?>
-        </form>
-    </div>
+                ?>
+            </form>
+        </div>
 
-    <!-- By pass valve and control system (water Bypass) -->
-    <div class="form-container">
-        <form id="bypassValveControlForm">
-            <?php
-            include 'config.php';
-            $sql = "SELECT * FROM status_deduruoya WHERE id='14' ";
-            $result = mysqli_query($connection, $sql);
-            $color = $result->fetch_assoc();
-            echo "<a href='update_deduruoya_status.php?id=$color[id]'>By pass Valve and Control System</a>";
-            echo "<input style='background-color :".$color['color'].";
-            ' type='text'>";
+        <!-- By pass valve and control system (water Bypass) -->
+        <div class="form-container">
+            <form id="bypassValveControlForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_deduruoya WHERE id='14' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_deduruoya_status.php?id=$color[id]'>By pass Valve and Control System</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-            ?>
-        </form>
-    </div>
+                ?>
+            </form>
+        </div>
 
-    <!-- Auxiliary Generator (outside) -->
-    <div class="form-container">
-        <form id="auxiliaryGeneratorForm">
-            <?php
-            include 'config.php';
-            $sql = "SELECT * FROM status_deduruoya WHERE id='15' ";
-            $result = mysqli_query($connection, $sql);
-            $color = $result->fetch_assoc();
-            echo "<a href='update_deduruoya_status.php?id=$color[id]'>Auxiliary Generator (outside)</a>";
-            echo "<input style='background-color :".$color['color'].";
-            ' type='text'>";
+        <!-- Auxiliary Generator (outside) -->
+        <div class="form-container">
+            <form id="auxiliaryGeneratorForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_deduruoya WHERE id='15' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_deduruoya_status.php?id=$color[id]'>Auxiliary Generator (outside)</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-            ?>
-        </form>
-    </div>
+                ?>
+            </form>
+        </div>
 
-    <!-- Transformer -->
-    <div class="form-container">
-        <form id="transformerForm">
-            <?php
-            include 'config.php';
-            $sql = "SELECT * FROM status_deduruoya WHERE id='16' ";
-            $result = mysqli_query($connection, $sql);
-            $color = $result->fetch_assoc();
-            echo "<a href='update_deduruoya_status.php?id=$color[id]'>Transformer</a>";
-            echo "<input style='background-color :".$color['color'].";
-            ' type='text'>";
+        <!-- Transformer -->
+        <div class="form-container">
+            <form id="transformerForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_deduruoya WHERE id='16' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_deduruoya_status.php?id=$color[id]'>Transformer</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-            ?>
-        </form>
-    </div>
+                ?>
+            </form>
+        </div>
 
-    <!-- CT PT Transformer -->
-    <div class="form-container">
-        <form id="ctPtTransformerForm">
-            <?php
-            include 'config.php';
-            $sql = "SELECT * FROM status_deduruoya WHERE id='17' ";
-            $result = mysqli_query($connection, $sql);
-            $color = $result->fetch_assoc();
-            echo "<a href='update_deduruoya_status.php?id=$color[id]'>CT PT Transformer</a>";
-            echo "<input style='background-color :".$color['color'].";
-            ' type='text'>";
+        <!-- CT PT Transformer -->
+        <div class="form-container">
+            <form id="ctPtTransformerForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_deduruoya WHERE id='17' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_deduruoya_status.php?id=$color[id]'>CT PT Transformer</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-            ?>
-        </form>
-    </div>
+                ?>
+            </form>
+        </div>
 
-    <!-- Auto Re-closer -->
-    <div class="form-container">
-        <form id="autoRecloserForm">
-            <?php
-            include 'config.php';
-            $sql = "SELECT * FROM status_deduruoya WHERE id='18' ";
-            $result = mysqli_query($connection, $sql);
-            $color = $result->fetch_assoc();
-            echo "<a href='update_deduruoya_status.php?id=$color[id]'>Auto Re-closer</a>";
-            echo "<input style='background-color :".$color['color'].";
-            ' type='text'>";
+        <!-- Auto Re-closer -->
+        <div class="form-container">
+            <form id="autoRecloserForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_deduruoya WHERE id='18' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_deduruoya_status.php?id=$color[id]'>Auto Re-closer</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-            ?>
-        </form>
-    </div>
+                ?>
+            </form>
+        </div>
 
-    <!-- Mechanical Bypass unit (33,000) -->
-    <div class="form-container">
-        <form id="mechanicalBypassForm">
-            <?php
-            include 'config.php';
-            $sql = "SELECT * FROM status_deduruoya WHERE id='19' ";
-            $result = mysqli_query($connection, $sql);
-            $color = $result->fetch_assoc();
-            echo "<a href='update_deduruoya_status.php?id=$color[id]'>Mechanical Bypass unit (33,000)</a>";
-            echo "<input style='background-color :".$color['color'].";
-            ' type='text'>";
+        <!-- Mechanical Bypass unit (33,000) -->
+        <div class="form-container">
+            <form id="mechanicalBypassForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_deduruoya WHERE id='19' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_deduruoya_status.php?id=$color[id]'>Mechanical Bypass unit (33,000)</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
 
-            ?>
-        </form>
-    </div>
+                ?>
+            </form>
+        </div>
 
-    <!-- Overhead crane -->
-    <div class="form-container">
-        <form id="overheadCraneForm">
-            <?php
-            include 'config.php';
-            $sql = "SELECT * FROM status_deduruoya WHERE id='20' ";
-            $result = mysqli_query($connection, $sql);
-            $color = $result->fetch_assoc();
-            echo "<a href='update_deduruoya_status.php?id=$color[id]'>Overhead Crane</a>";
-            echo "<input style='background-color :".$color['color'].";
-            ' type='text'>";
-            ?>
-        </form>
-    </div>
-</div>     
+        <!-- Overhead crane -->
+        <div class="form-container">
+            <form id="overheadCraneForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_deduruoya WHERE id='20' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_deduruoya_status.php?id=$color[id]'>Overhead Crane</a>";
+                echo "<input style='background-color :".$color['color'].";
+                ' type='text'>";
+                ?>
+            </form>
+        </div>
+    </div>     
      
     <!-- card end -->
 
@@ -470,9 +470,13 @@ include("./header.php");
     include 'config.php';
 
     $sql = "SELECT date, unit
+    FROM (
+        SELECT id, date, unit
         FROM deduruoya
-        ORDER BY id ASC
-        LIMIT 10";
+        ORDER BY id DESC
+        LIMIT 10
+    ) sub
+    ORDER BY id ASC";
 
     $result = $connection->query($sql);
 

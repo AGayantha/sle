@@ -13,7 +13,21 @@ if (isset($_SESSION["name"])) {
     <link rel="stylesheet" href="./css/dashboard.css" />
     <link rel="stylesheet" href="./css/plant.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <script src="https://kit.fontawesome.com/f65110973c.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/f65110973c.js" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var path = window.location.pathname;
+        var page = path.split("/").pop();
+        var links = document.querySelectorAll('.menu ul li a');
+        links.forEach(function(link) {
+          var href = link.getAttribute('href');
+          var linkPage = href.split("/").pop();
+          if (linkPage === page) {
+            link.parentNode.classList.add('active');
+          }
+        });
+      });
+  </script>
   </head>
 
   <body>
@@ -30,6 +44,7 @@ if (isset($_SESSION["name"])) {
           ?>
         </a>
       </nav>
+
     </header>
 
     <div class="main">
@@ -40,7 +55,7 @@ if (isset($_SESSION["name"])) {
             <a href="#"><i class="fa-solid fa-seedling"></i>Sri Lanka
               Energies</a>
           </li>
-          <hr />
+          <hr />h
           <li>
             <a href="./dashboard.php"><i class="fa fa-tachometer" aria-hidden="true"></i>Dashboard</a>
           </li>
