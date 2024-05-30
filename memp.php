@@ -44,45 +44,6 @@ include("./header.php");
         </tfoot>
     </table>
 
-
-    
-    <table id="deduruoya_table2" class="plant_table">
-    <thead>
-        <tr>
-            <td>Date</td>
-            <td>Name</td>
-            <td>Contact Number</td>
-        </tr>
-    </thead>
-    <tbody>
-    <?php
-    require_once 'config.php';
-    $query = "SELECT * FROM shift_memp
-            ORDER BY id DESC
-            LIMIT 2";
-    $result = mysqli_query($connection, $query);
-
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo "<tr><td>" . $row['date'] . "</td><td>" . $row['name'] ."</td><td>"  . $row['number'] ."</td></tr>";
-        }
-    }
-
-    // Close the result set
-    $result->close();
-
-    // Close the database connection
-    $connection->close();
-    ?>
-    </tbody>
-    <tfoot>
-        <tr>
-            <td><button class="btn" onclick="openPopupForm3()">Add-Data</button></td>
-        </tr>
-    </tfoot>
-</table>
-         
-
     <div id="curve_chart" class="curve_chart"></div>
 
     <!-- item status Start -->
