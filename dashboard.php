@@ -223,10 +223,6 @@ $connection->close();
             <td><i style="color: #FF9900 ; margin-right: 5px; " class="fa-solid fa-circle"></i>Biomed</td>
             <?php echo "<td style='font-weight: bold; '>" . ($row3['unit'] ?? '0') . "kWh</td>"; ?>
           </tr>
-          <tr>
-            <td><i style="color: #109618 ; margin-right: 5px; " class="fa-solid fa-circle"></i>memp</td>
-            <?php echo "<td style='font-weight: bold; '>" . ($row4['unit'] ?? '0') . "</td>"; ?>
-          </tr>
         </tbody>
       </table>
 
