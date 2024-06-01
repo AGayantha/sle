@@ -9,8 +9,8 @@ include("./header.php");
         <thead>
             <tr>
                 <td>DATE</td>
-                <td>UNIT</td>
-                <td>REJECT</td>
+                <td>DISPATCH</td>
+                <td>MANUFACTURED</td>
             </tr>
         </thead>
         <tbody>
@@ -243,9 +243,9 @@ include("./header.php");
             <h2>ADD DATA</h2>
             <input type="date" name="date" required placeholder="date" />
             <br />
-            <input type="text" name="unit" required placeholder="Generate Unit" />
+            <input type="text" name="unit" required placeholder="Dispatch Unit" />
             <br />
-            <input type="text" name="reject" required placeholder="Reject Unit" />
+            <input type="text" name="reject" required placeholder="Manufactured Unit" />
             <br />
             <input type="submit" />
             <button onclick="closePopupForm()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>

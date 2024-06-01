@@ -38,7 +38,6 @@ $data[] = ['memp', (int) ($row4['Revenue'] ?? 0)];
 $data2[] = ['deduruoya', (int) ($row1['unit'] ?? 0)];
 $data2[] = ['kubalgama', (int) ($row2['unit'] ?? 0)];
 $data2[] = ['biomed', (int) ($row3['unit'] ?? 0)];
-$data2[] = ['memp', (int) ($row4['unit'] ?? 0)];
 
 // Convert the PHP array to a JSON string
 $json_data = json_encode($data);
@@ -216,7 +215,7 @@ $connection->close();
             <?php echo "<td style='font-weight: bold; '>" . ($row1['unit'] ?? '0') . "kWh</td>"; ?>
           </tr>
           <tr>
-            <td><i style="color: #DC3912 ; margin-right: 5px; " class="fa-solid fa-circle"></i>kubalgama</td>
+            <td><i style="color: #DC3912 ; margin-right: 5px; " class="fa-solid fa-circle"></i>Kubalgama</td>
             <?php echo "<td style='font-weight: bold; '>" . ($row2['unit'] ?? '0') . "kWh</td>"; ?>
           </tr>
           <tr>
@@ -248,19 +247,19 @@ $connection->close();
           </tr>
           <tr>
             <td><i style="color: #3366CC ; margin-right: 5px;" class="fa-solid fa-circle"></i>Deduruoya</td>
-            <?php echo "<td style='font-weight: bold; '>Rs" . ($row1['Revenue'] ?? '0') . ".00</td>"; ?>
+            <?php echo "<td style='font-weight: bold; '>Rs " . ($row1['Revenue'] ?? '0') . "</td>"; ?>
           </tr>
           <tr>
-            <td><i style="color: #DC3912 ; margin-right: 5px; " class="fa-solid fa-circle"></i>kubalgama</td>
-            <?php echo "<td style='font-weight: bold; '>Rs" . ($row2['Revenue'] ?? '0') . ".00</td>"; ?>
+            <td><i style="color: #DC3912 ; margin-right: 5px; " class="fa-solid fa-circle"></i>Kubalgama</td>
+            <?php echo "<td style='font-weight: bold; '>Rs " . ($row2['Revenue'] ?? '0') . "</td>"; ?>
           </tr>
           <tr>
             <td><i style="color: #FF9900 ; margin-right: 5px; " class="fa-solid fa-circle"></i>Biomed</td>
-            <?php echo "<td style='font-weight: bold; '>Rs" . ($row3['Revenue'] ?? '0') . ".00</td>"; ?>
+            <?php echo "<td style='font-weight: bold; '>Rs " . ($row3['Revenue'] ?? '0') . "</td>"; ?>
           </tr>
           <tr>
-            <td><i style="color: #109618 ; margin-right: 5px; " class="fa-solid fa-circle"></i>memp</td>
-            <?php echo "<td style='font-weight: bold; '>Rs" . ($row4['Revenue'] ?? '0') . ".00</td>"; ?>
+            <td><i style="color: #109618 ; margin-right: 5px; " class="fa-solid fa-circle"></i>MEMP</td>
+            <?php echo "<td style='font-weight: bold; '>Rs " . ($row4['Revenue'] ?? '0') . "</td>"; ?>
           </tr>
         </tbody>
       </table>
