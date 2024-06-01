@@ -474,7 +474,7 @@ include("./header.php");
             legend: { position: "none" },
             backgroundColor: { fill: "transparent" },
             chartArea: { left: 70, top: 50, width: '100%', height: '75%' },
-            vAxes: { 0: { title: 'M W h' } }
+            vAxes: { 0: { title: 'K W h' } }
         };
 
         var chart = new google.visualization.LineChart(

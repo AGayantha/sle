@@ -435,7 +435,7 @@ include("./header.php");
         SELECT id, date, unit
         FROM biomed
         ORDER BY id DESC
-        LIMIT 10
+        LIMIT 14
     ) sub
     ORDER BY id ASC";
 
