@@ -11,6 +11,12 @@ include("./header.php");
                 <td>DATE</td>
                 <td>DISPATCH</td>
                 <td>MANUFACTURED</td>
+                <td>Good Covers</td>
+                <td>Good Bases</td>
+                <td>Good Shutters</td>
+                <td>Defect Covers</td>
+                <td>Defect Bases</td>
+                <td>Defect Shutters</td> 
             </tr>
         </thead>
         <tbody>
@@ -24,7 +30,16 @@ include("./header.php");
 
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        echo "<td>" . $row['date'] . "</td><td>" . $row['unit'] ."</td><td>". $row['reject']. " </td><tr>";
+                        echo "<td>" . $row['date'] . "</td>
+                        <td>" . $row['dispatch'] ."</td>
+                        <td>". $row['manufactured']. " </td>
+                        <td>" . $row['good_covers'] . "</td>
+                        <td>" . $row['good_bases'] . "</td>
+                        <td>" . $row['good_shutters'] . "</td>
+                        <td>" . $row['defect_covers'] . "</td>
+                        <td>" . $row['defect_bases'] . "</td>
+                        <td>" . $row['defect_shutters'] . "</td>
+                        <tr>";
                     }
                 }
                 // $connection->close();
@@ -32,8 +47,9 @@ include("./header.php");
         </tbody>
         <tfoot>
             <tr>
-                <td><button class="btn" onclick="openPopupForm()">Add-Data</button>
-                    <button class="btn" onclick="openPopupForm2()">Generate-Data</button>
+                <td>
+                    <button style="margin-bottom: 20px;" class="btn" onclick="openPopupForm()">Add-Data</button>
+                    <button style="margin-bottom: 20px;" class="btn" onclick="openPopupForm2()">Generate-Data</button>
                     <?php
                      if ($_SESSION['role'] == 'admin') {
                     echo "<button class='btn' onclick='opendeleteForm()'>Delete</button>";
@@ -243,14 +259,27 @@ include("./header.php");
             <h2>ADD DATA</h2>
             <input type="date" name="date" required placeholder="date" />
             <br />
-            <input type="text" name="unit" required placeholder="Dispatch Unit" />
+            <input type="text" name="dispatch" required placeholder="Dispatch Unit" />
             <br />
-            <input type="text" name="reject" required placeholder="Manufactured Unit" />
+            <input type="text" name="manufactured" required placeholder="Manufactured Unit" />
+            <br />
+            <input type="text" name="good_covers" required placeholder="Good Covers" />
+            <br />
+            <input type="text" name="good_bases" required placeholder="Good Bases" />
+            <br />
+            <input type="text" name="good_shutters" required placeholder="Good Shutters" />
+            <br />
+            <input type="text" name="defect_covers" required placeholder="Defect Covers" />
+            <br />
+            <input type="text" name="defect_bases" required placeholder="Defect Bases" />
+            <br />
+            <input type="text" name="defect_shutters" required placeholder="Defect Shutters" />
             <br />
             <input type="submit" />
             <button onclick="closePopupForm()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
         </form>
     </div>
+
 
     <div id="popup-form2" class="popup_form">
         <form action="./generate_memp.php" method="post">
@@ -293,9 +322,9 @@ include("./header.php");
     <?php
     include 'config.php';
 
-    $sql = "SELECT date, unit
+    $sql = "SELECT date, dispatch
     FROM (
-        SELECT id, date, unit
+        SELECT id, date, dispatch
         FROM memp
         ORDER BY id DESC
         LIMIT 10
@@ -308,11 +337,11 @@ include("./header.php");
         $data = array();
 
         // Add the header to the array
-        $data[] = ['date', 'unit'];
+        $data[] = ['date', 'dispatch'];
 
         while ($row = $result->fetch_assoc()) {
             // Fetch and add each row to the array
-            $data[] = [date('m-d', strtotime($row['date'])), (int) $row['unit']];
+            $data[] = [date('m-d', strtotime($row['date'])), (int) $row['dispatch']];
         }
 
         // Convert the PHP array to a JSON string
@@ -338,7 +367,7 @@ include("./header.php");
             legend: { position: "none" },
             backgroundColor: { fill: "transparent" },
             chartArea: { left: 70, top: 50, width: '100%', height: '75%' },
-            vAxes: { 0: { title: 'Unit' } }
+            vAxes: { 0: { title: 'dispatch' } }
         };
 
         var chart = new google.visualization.LineChart(
@@ -353,7 +382,6 @@ include("./header.php");
 
     function openPopupForm() {
         document.getElementById('popup-form').style.display = 'block';
-        document.getElementById('curve_chart').style.display = 'none';
         var divToBlur = document.getElementById('blurredDiv');
         var mydiv = document.getElementById('myDiv');
         var table = document.getElementById('deduruoya_table');
@@ -365,7 +393,6 @@ include("./header.php");
     }
     function openPopupForm2() {
         document.getElementById('popup-form2').style.display = 'block';
-        document.getElementById('curve_chart').style.display = 'none';
         var divToBlur = document.getElementById('blurredDiv');
         var mydiv = document.getElementById('myDiv');
         var table = document.getElementById('deduruoya_table');
@@ -377,7 +404,6 @@ include("./header.php");
     }
     function openPopupForm3() {
         document.getElementById('popup-form3').style.display = 'block';
-        document.getElementById('curve_chart').style.display = 'none';
         var divToBlur = document.getElementById('blurredDiv');
         var mydiv = document.getElementById('myDiv');
         var table = document.getElementById('deduruoya_table');
@@ -389,7 +415,6 @@ include("./header.php");
     }
     function opendeleteForm() {
         document.getElementById('popup-form4').style.display = 'block';
-        document.getElementById('curve_chart').style.display = 'none';
         var divToBlur = document.getElementById('blurredDiv');
         var mydiv = document.getElementById('myDiv');
         var table = document.getElementById('deduruoya_table');

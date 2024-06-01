@@ -9,7 +9,7 @@ $d = $currentDate->format('Y-m-d');
 $sql_deduruoya = "SELECT Revenue,unit FROM deduruoya WHERE date = '" . $d . "'";
 $sql_kumbalgamuwa = "SELECT Revenue,unit FROM kumbalgamuwa WHERE date = '" . $d . "'";
 $sql_biomed = "SELECT Revenue,unit FROM biomed WHERE date = '" . $d . "'";
-$sql_memp = "SELECT Revenue,unit FROM memp WHERE date = '" . $d . "'";
+$sql_memp = "SELECT Revenue,dispatch FROM memp WHERE date = '" . $d . "'";
 
 $result_deduruoya = mysqli_query($connection, $sql_deduruoya);
 $result_kumbalgamuwa = mysqli_query($connection, $sql_kumbalgamuwa);

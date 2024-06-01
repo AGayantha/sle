@@ -55,7 +55,7 @@ if (isset($_SESSION["name"])) {
             <a href="#"><i class="fa-solid fa-seedling"></i>Sri Lanka
               Energies</a>
           </li>
-          <hr />h
+          <hr />
           <li>
             <a href="./dashboard.php"><i class="fa fa-tachometer" aria-hidden="true"></i>Dashboard</a>
           </li>
