@@ -86,6 +86,9 @@ if (isset($_SESSION["name"])) {
           <li>
             <a href="./solar.php"><i class="fa fa-university" aria-hidden="true"></i>Solar Department</a>
           </li>
+          <li>
+            <a href="./finance.php"><i class="fa fa-university" aria-hidden="true"></i>Finance Division</a>
+          </li>
 <!-- user previlage- only addmin can see start-->
           <?php
           if ($_SESSION['role'] == 'admin') {

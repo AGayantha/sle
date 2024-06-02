@@ -5,7 +5,7 @@ if (isset($_SESSION["name"])) {
 
     $date = $_POST['date'];
 
-    $sql = "DELETE FROM solar_application WHERE date ='$date'";
+    $sql = "DELETE FROM finance_status WHERE date ='$date'";
 
     $data = mysqli_query($connection,$sql);
 
@@ -15,10 +15,9 @@ if (isset($_SESSION["name"])) {
     } else {
         echo "Error deleting record: " ;
     }
-    header("Location:./solar.php");
+    header("Location:./finance.php");
     $connection->close();
 
 } else {
 }
 ?>
-

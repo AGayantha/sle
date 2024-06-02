@@ -5,7 +5,7 @@ if (isset($_SESSION["name"])) {
 
     $date = $_POST['date'];
 
-    $sql = "DELETE FROM solar_application WHERE date ='$date'";
+    $sql = "DELETE FROM solar_estimates WHERE date ='$date'";
 
     $data = mysqli_query($connection,$sql);
 
@@ -21,4 +21,3 @@ if (isset($_SESSION["name"])) {
 } else {
 }
 ?>
-
