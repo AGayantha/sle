@@ -211,22 +211,7 @@ include("./header.php");
             </form>
         </div>
 
-        <!-- Motor control Panel -->
-        <div class="form-container">
-            <form id="motorControlPanelForm">
-                <?php
-                include 'config.php';
-                $sql = "SELECT * FROM status_kumbalgamuwa WHERE id='11' ";
-                $result = mysqli_query($connection, $sql);
-                $color = $result->fetch_assoc();
-                echo "<a href='update_kumbalgamuwa_status.php?id=$color[id]'>Motor Control Panel</a>";
-                echo "<input style='background-color :".$color['color'].";
-                ' type='text'>";
-
-                ?>
-            </form>
-        </div>
-
+        
         <!-- Decentralized control common -->
         <div class="form-container">
             <form id="decentralizedControlCommonForm">

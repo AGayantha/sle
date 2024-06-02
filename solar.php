@@ -4,6 +4,8 @@ include("./header.php");
 ?>
 <div class="content">
     <h1>Solar Department</h1>
+
+<!-- table 1 -->
     <table id="deduruoya_table" class="plant_table">
         <thead>
             <tr>
@@ -36,17 +38,18 @@ include("./header.php");
         </tbody>
         <tfoot>
             <tr>
-                <td><button class="btn" onclick="openPopupForm()">Add-Data</button>
+                <td><button class="btn" onclick="openPopupForm1()">Add-Data</button> 
+                <!-- function: openPopupForm_1  -->
                     <?php
                      if ($_SESSION['role'] == 'admin') {
-                    echo "<button class='btn' onclick='opendeleteForm()'>Delete</button>";
+                    echo "<button class='btn' onclick='opendeleteForm12()'>Delete</button>";
                      }                    
                     ?>
                 </td>
             </tr>
         </tfoot>
     </table>
-
+<!-- table 2 -->
     <table id="deduruoya_table" class="plant_table">
         <thead>
             <tr>
@@ -82,14 +85,14 @@ include("./header.php");
                 <td><button class="btn" onclick="openPopupForm2()">Add-Data</button>
                     <?php
                      if ($_SESSION['role'] == 'admin') {
-                    echo "<button class='btn' onclick='opendeleteForm2()'>Delete</button>";
+                    echo "<button class='btn' onclick='opendeleteForm22()'>Delete</button>";
                      }                    
                     ?>
                 </td>
             </tr>
         </tfoot>
     </table>
-
+<!-- table 3 -->
     <table id="deduruoya_table" class="plant_table">
         <thead>
             <tr>
@@ -125,14 +128,14 @@ include("./header.php");
                 <td><button class="btn" onclick="openPopupForm3()">Add-Data</button>
                     <?php
                      if ($_SESSION['role'] == 'admin') {
-                    echo "<button class='btn' onclick='opendeleteForm3()'>Delete</button>";
+                    echo "<button class='btn' onclick='opendeleteForm32()'>Delete</button>";
                      }                    
                     ?>
                 </td>
             </tr>
         </tfoot>
     </table>
-
+<!-- table 4 -->
     <table id="deduruoya_table" class="plant_table">
         <thead>
             <tr>
@@ -168,7 +171,7 @@ include("./header.php");
     </table>
 </div>
 
-    <div id="popup-form" class="popup_form">
+    <div id="popup-form-11" class="popup_form">
         <form action="./add_solar.php" method="post">
             <h2>ADD DATA</h2>
             <input type="date" name="date" required placeholder="date" />
@@ -182,7 +185,7 @@ include("./header.php");
         </form>
     </div>
 
-    <div id="popup-form-2" class="popup_form">
+    <div id="popup-form-21" class="popup_form">
         <form action="./add_solar_2.php" method="post">
             <h2>ADD DATA</h2>
             <input type="date" name="date" required placeholder="date" />
@@ -198,7 +201,7 @@ include("./header.php");
         </form>
     </div>
 
-    <div id="popup-form-3" class="popup_form">
+    <div id="popup-form-31" class="popup_form">
         <form action="./add_solar_3.php" method="post">
             <h2>ADD DATA</h2>
             <input type="date" name="date" required placeholder="date" />
@@ -214,7 +217,7 @@ include("./header.php");
         </form>
     </div>
 
-    <div id="popup-form-revenue" class="popup_form">
+    <div id="popup-form-revenue-41" class="popup_form">
         <form action="./add_solar_4.php" method="post">
             <h2>ADD DATA</h2>
             <input type="number" name="revenue" required placeholder="Revenue" />
@@ -226,7 +229,7 @@ include("./header.php");
         </form>
     </div>
 
-    <div id="popup-form4" class="popup_form">
+    <div id="popup-form-12" class="popup_form">
         <form action="./delete_solar.php" method="post">
             <h2>Date</h2>
             <input type="date" name="date" required placeholder="Date" />
@@ -236,7 +239,7 @@ include("./header.php");
         </form>
     </div>
 
-    <div id="popup-form-3" class="popup_form">
+    <div id="popup-form-22" class="popup_form">
         <form action="./delete_solar_2.php" method="post">
             <h2>Date</h2>
             <input type="date" name="date" required placeholder="Date" />
@@ -246,8 +249,8 @@ include("./header.php");
         </form>
     </div>
 
-    <div id="popup-form-4" class="popup_form">
-        <form action="./delete_solar_4.php" method="post">
+    <div id="popup-form-32" class="popup_form">
+        <form action="./delete_solar_3.php" method="post">
             <h2>Date</h2>
             <input type="date" name="date" required placeholder="Date" />
             <br />
@@ -256,7 +259,7 @@ include("./header.php");
         </form>
     </div>
 
-    <div id="popup-form-del-revenue" class="popup_form">
+    <div id="popup-form-del-revenue-42" class="popup_form">
         <form action="./delete_solar_4.php" method="post">
             <h2>Date</h2>
             <input type="date" name="date" required placeholder="Date" />
@@ -271,8 +274,8 @@ include("./footer.php");
 ?>
 <script>
 
-function openPopupForm() {
-    document.getElementById('popup-form').style.display = 'block';
+function openPopupForm1() {
+    document.getElementById('popup-form-11').style.display = 'block';
     document.getElementById('curve_chart').style.display = 'none';
     var divToBlur = document.getElementById('blurredDiv');
     var mydiv = document.getElementById('myDiv');
@@ -284,7 +287,7 @@ function openPopupForm() {
     table.classList.add('blurred');
 }
 function openPopupForm2() {
-    document.getElementById('popup-form-2').style.display = 'block';
+    document.getElementById('popup-form-21').style.display = 'block';
     document.getElementById('curve_chart').style.display = 'none';
     var divToBlur = document.getElementById('blurredDiv');
     var mydiv = document.getElementById('myDiv');
@@ -296,7 +299,7 @@ function openPopupForm2() {
     table.classList.add('blurred');
 }
 function openPopupForm3() {
-    document.getElementById('popup-form-3').style.display = 'block';
+    document.getElementById('popup-form-31').style.display = 'block';
     document.getElementById('curve_chart').style.display = 'none';
     var divToBlur = document.getElementById('blurredDiv');
     var mydiv = document.getElementById('myDiv');
@@ -309,7 +312,7 @@ function openPopupForm3() {
 }
 
 function openPopupForm4() {
-    document.getElementById('popup-form-revenue').style.display = 'block';
+    document.getElementById('popup-form-revenue-41').style.display = 'block';
     document.getElementById('curve_chart').style.display = 'none';
     var divToBlur = document.getElementById('blurredDiv');
     var mydiv = document.getElementById('myDiv');
@@ -323,12 +326,13 @@ function openPopupForm4() {
 
 
 function closePopupForm() {
-        document.getElementById('popup-form').style.display = 'none';
-        document.getElementById('popup-form-2').style.display = 'none';
-        document.getElementById('popup-form-3').style.display = 'none';
-        document.getElementById('popup-form4').style.display = 'none';
-        document.getElementById('popup-form-revenue').style.display = 'none';
-        document.getElementById('popup-form-del-revenue').style.display = 'none';
+        document.getElementById('popup-form-11').style.display = 'none';
+        document.getElementById('popup-form-12').style.display = 'none';
+        document.getElementById('popup-form-21').style.display = 'none';
+        document.getElementById('popup-form-22').style.display = 'none';
+        document.getElementById('popup-form-31').style.display = 'none';
+        document.getElementById('popup-form-32').style.display = 'none';
+        document.getElementById('popup-form-revenue-41').style.display = 'none';        
         var divToBlur = document.getElementById('blurredDiv');
         var mydiv = document.getElementById('myDiv');
         var table = document.getElementById('deduruoya_table');
@@ -338,8 +342,8 @@ function closePopupForm() {
         mydiv.classList.remove('blurred');
         table.classList.remove('blurred');
     }
-    function opendeleteForm() {
-        document.getElementById('popup-form4').style.display = 'block';
+    function opendeleteForm12() {
+        document.getElementById('popup-form-12').style.display = 'block';
         document.getElementById('curve_chart').style.display = 'none';
         var divToBlur = document.getElementById('blurredDiv');
         var mydiv = document.getElementById('myDiv');
@@ -350,8 +354,8 @@ function closePopupForm() {
         mydiv.classList.add('blurred');
         table.classList.add('blurred');
     }
-    function opendeleteForm2() {
-        document.getElementById('popup-form-3').style.display = 'block';
+    function opendeleteForm22() {
+        document.getElementById('popup-form-22').style.display = 'block';
         document.getElementById('curve_chart').style.display = 'none';
         var divToBlur = document.getElementById('blurredDiv');
         var mydiv = document.getElementById('myDiv');
@@ -362,8 +366,8 @@ function closePopupForm() {
         mydiv.classList.add('blurred');
         table.classList.add('blurred');
     }
-    function opendeleteForm3() {
-    document.getElementById('popup-form-4').style.display = 'block';
+    function opendeleteForm32() {
+    document.getElementById('popup-form-32').style.display = 'block';
     document.getElementById('curve_chart').style.display = 'none';
     var divToBlur = document.getElementById('blurredDiv');
     var mydiv = document.getElementById('myDiv');
@@ -374,8 +378,8 @@ function closePopupForm() {
     mydiv.classList.add('blurred');
     table.classList.add('blurred');
     }
-    function opendeleteForm4() {
-    document.getElementById('popup-form-del-revenue').style.display = 'block';
+    function opendeleteForm42() {
+    document.getElementById('popup-form-del-revenue-42').style.display = 'block';
     document.getElementById('curve_chart').style.display = 'none';
     var divToBlur = document.getElementById('blurredDiv');
     var mydiv = document.getElementById('myDiv');
