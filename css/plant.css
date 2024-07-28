@@ -164,6 +164,16 @@
     font-weight: 400;
     border-bottom-width: 5px;
   }
+  input[type="time"]{
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    border: 1px solid #232E3E;
+    font-size: 17px;
+    font-weight: 400;
+    border-bottom-width: 5px;
+  }
   input[type="password"]{
     margin-bottom: 20px;
     padding: 10px;
