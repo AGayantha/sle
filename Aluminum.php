@@ -21,7 +21,7 @@ include("./header.php");
                 require_once 'config.php';
                 $query = "SELECT * FROM scalp_task
                         ORDER BY id DESC
-                        LIMIT 2";
+                        LIMIT 5";
                 $result = mysqli_query($connection, $query);
 
                 if ($result->num_rows > 0) {
