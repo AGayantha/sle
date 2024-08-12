@@ -10,9 +10,15 @@ $date = $_POST['date'];
     <table id="deduruoya_table" class="plant_table">
         <thead>
             <tr>
-                <td>Date</td>
-                <td>Unit</td>
-
+            <td>DATE</td>
+            <td>DISPATCH</td>
+            <td>MANUFACTURED</td>
+            <td>Good Covers</td>
+            <td>Good Bases</td>
+            <td>Good Shutters</td>
+            <td>Defect Covers</td>
+            <td>Defect Bases</td>
+            <td>Defect Shutters</td> 
             </tr>
         </thead>
         <tbody>
@@ -24,7 +30,16 @@ $date = $_POST['date'];
 
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        echo "<td>" . $row['date'] . "</td><td>" . $row['unit'] . ".kWh</td><tr>";
+                        echo "<td>" . $row['date'] . "</td>
+                        <td>" . $row['dispatch'] ."</td>
+                        <td>". $row['manufactured']. " </td>
+                        <td>" . $row['good_covers'] . "</td>
+                        <td>" . $row['good_bases'] . "</td>
+                        <td>" . $row['good_shutters'] . "</td>
+                        <td>" . $row['defect_covers'] . "</td>
+                        <td>" . $row['defect_bases'] . "</td>
+                        <td>" . $row['defect_shutters'] . "</td>
+                        <tr>";
                     }
                 }
                 ?>
