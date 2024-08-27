@@ -5,7 +5,7 @@ include("./header.php");
 
 <div class="content">
     <h1>Aluminum Recycling</h1>
-    <button class="btn" onclick="openImageForm()" style="margin-bottom: 10px;">Add Image</button>
+    <!-- <button class="btn" onclick="openImageForm()" style="margin-bottom: 10px;">Add Image</button>
 
     <div class="card">
         <div class="cot">
@@ -91,8 +91,8 @@ include("./header.php");
                 </div>
             <?php endif; ?>
         </div>
+    </div> -->
 
-    </div>
     <!-- 2024_7_28 add Task -->
     <table id="deduruoya_table" class="plant_table">
         <thead>
