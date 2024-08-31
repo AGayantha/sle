@@ -18,7 +18,7 @@ include("./header.php");
                 $image_name = $result->fetch_assoc();
 
                 if (!empty($image_name['image_1'])) {
-                    echo '<a href="kumbalagama.php"><img src="uploads/' . htmlspecialchars($image_name['image_1']) . '" alt=""></a>';
+                    echo '<a href="javascript:void(0)"><img src="uploads/' . htmlspecialchars($image_name['image_1']) . '" alt=""></a>';
                 }
                 ?>
             </div>
@@ -39,7 +39,7 @@ include("./header.php");
                 $image_name = $result->fetch_assoc();
 
                 if (!empty($image_name['image_2'])) {
-                    echo '<a href="kumbalagama.php"><img src="uploads/' . htmlspecialchars($image_name['image_2']) . '" alt=""></a>';
+                    echo '<a href="javascript:void(0)"><img src="uploads/' . htmlspecialchars($image_name['image_2']) . '" alt=""></a>';
                 }
                 ?>
             </div>
@@ -60,7 +60,7 @@ include("./header.php");
                 $image_name = $result->fetch_assoc();
 
                 if (!empty($image_name['image_3'])) {
-                    echo '<a href="kumbalagama.php"><img src="uploads/' . htmlspecialchars($image_name['image_3']) . '" alt=""></a>';
+                    echo '<a href="javascript:void(0)"><img src="uploads/' . htmlspecialchars($image_name['image_3']) . '" alt=""></a>';
                 }
                 ?>
             </div>
@@ -81,7 +81,7 @@ include("./header.php");
                 $image_name = $result->fetch_assoc();
 
                 if (!empty($image_name['image_4'])) {
-                    echo '<a href="kumbalagama.php"><img src="uploads/' . htmlspecialchars($image_name['image_4']) . '" alt=""></a>';
+                    echo '<a href="javascript:void(0)"><img src="uploads/' . htmlspecialchars($image_name['image_4']) . '" alt=""></a>';
                 }
                 ?>
             </div>
