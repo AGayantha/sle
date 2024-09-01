@@ -6,8 +6,8 @@ if (isset($_SESSION["name"])) {
     // Directory where you want to save the uploaded images
     $target_dir = "uploads/";
 
-    // Get today's date
-    $date = date('Y-m-d');
+    // Get date from user
+    $date = $_POST['date'];
 
     // Initialize an array to store the image names
     $imageNames = [];

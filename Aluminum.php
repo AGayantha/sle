@@ -230,7 +230,9 @@ include("./header.php");
         <input type="file" name="image1" required />
         <input type="file" name="image2" />
         <input type="file" name="image3" />
-        <input type="file" name="image4" />
+        <input type="file" name="image4" />        
+        <br />
+        <input type="date" name="date" required placeholder="date" />
         <br />
         <input type="submit" />
         <button type="button" onclick="closePopupForm()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
