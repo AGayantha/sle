@@ -5,6 +5,102 @@ include("./header.php");
 
 <div class="content">
     <h1>Meter Manufacturing</h1>
+    <button class="btn" onclick="openImageForm()" style="margin-bottom: 10px;">Add Image</button>
+
+    <div class="card">
+        <div class="cot">
+            <div class="img">
+                <?php
+                include 'config.php';
+
+                $sql = "SELECT * FROM plant_image WHERE plant = 'memp' ORDER BY id DESC LIMIT 1";
+                $result = mysqli_query($connection, $sql);
+                $image_name = $result->fetch_assoc();
+
+                if (!empty($image_name['image_1'])) {
+                    echo '<a href="uploads/memp/' . htmlspecialchars($image_name['image_1']) . '" target="_blank">
+                            <img src="uploads/memp/' . htmlspecialchars($image_name['image_1']) . '" alt="">
+                          </a>';
+                }
+                ?>
+            </div>
+            <?php if (!empty($image_name['image_1'])): ?>
+                <div class="text">
+                    <p style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></p>
+                </div>
+            <?php endif; ?>
+        </div>
+
+        <div class="cot">
+            <div class="img">
+                <?php
+                include 'config.php';
+
+                $sql = "SELECT * FROM plant_image WHERE plant = 'memp' ORDER BY id DESC LIMIT 1";
+                $result = mysqli_query($connection, $sql);
+                $image_name = $result->fetch_assoc();
+
+                if (!empty($image_name['image_2'])) {
+                    echo '<a href="uploads/memp/' . htmlspecialchars($image_name['image_2']) . '" target="_blank">
+                            <img src="uploads/memp/' . htmlspecialchars($image_name['image_2']) . '" alt="">
+                          </a>';
+                }
+                ?>
+            </div>
+            <?php if (!empty($image_name['image_2'])): ?>
+                <div class="text">
+                    <p style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></p>
+                </div>
+            <?php endif; ?>
+        </div>
+
+        <div class="cot">
+            <div class="img">
+                <?php
+                include 'config.php';
+
+                $sql = "SELECT * FROM plant_image WHERE plant = 'memp' ORDER BY id DESC LIMIT 1";
+                $result = mysqli_query($connection, $sql);
+                $image_name = $result->fetch_assoc();
+
+                if (!empty($image_name['image_3'])) {
+                    echo '<a href="uploads/memp/' . htmlspecialchars($image_name['image_3']) . '" target="_blank">
+                            <img src="uploads/memp/' . htmlspecialchars($image_name['image_3']) . '" alt="">
+                          </a>';
+                }
+                ?>
+            </div>
+            <?php if (!empty($image_name['image_3'])): ?>
+                <div class="text">
+                    <p style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></p>
+                </div>
+            <?php endif; ?>
+        </div>
+
+        <div class="cot">
+            <div class="img">
+                <?php
+                include 'config.php';
+
+                $sql = "SELECT * FROM plant_image WHERE plant = 'memp' ORDER BY id DESC LIMIT 1";
+                $result = mysqli_query($connection, $sql);
+                $image_name = $result->fetch_assoc();
+
+                if (!empty($image_name['image_4'])) {
+                    echo '<a href="uploads/memp/' . htmlspecialchars($image_name['image_4']) . '" target="_blank">
+                            <img src="uploads/memp/' . htmlspecialchars($image_name['image_4']) . '" alt="">
+                          </a>';
+                }
+                ?>
+            </div>
+            <?php if (!empty($image_name['image_4'])): ?>
+                <div class="text">
+                    <p style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></p>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+
     <table id="deduruoya_table" class="plant_table">
         <thead>
             <tr>
@@ -314,6 +410,22 @@ include("./header.php");
             <button onclick="closePopupForm()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
         </form>
     </div>
+
+    <div id="image-popup-form" class="popup_form">
+        <form action="./add_plant_image.php" method="post" enctype="multipart/form-data">
+            <h2>ADD IMAGE</h2>
+            <input type="file" name="image1" required />
+            <input type="file" name="image2" />
+            <input type="file" name="image3" />
+            <input type="file" name="image4" />        
+            <input type="hidden" name="plant" value="memp" />        
+            <br />
+            <input type="date" name="date" required placeholder="date" />
+            <br />
+            <input type="submit" />
+            <button type="button" onclick="closePopupForm()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+        </form>
+    </div>
     
 </div>
 
@@ -379,6 +491,9 @@ include("./header.php");
 </script>
 
 <script>
+    function openImageForm() {
+        document.getElementById('image-popup-form').style.display = 'block';
+    }
 
     function openPopupForm() {
         document.getElementById('popup-form').style.display = 'block';
@@ -430,6 +545,7 @@ include("./header.php");
         document.getElementById('popup-form3').style.display = 'none';
         document.getElementById('popup-form4').style.display = 'none';
         document.getElementById('curve_chart').style.display = 'block';
+        document.getElementById('image-popup-form').style.display = 'none';
         var divToBlur = document.getElementById('blurredDiv');
         var mydiv = document.getElementById('myDiv');
         var table = document.getElementById('deduruoya_table');
