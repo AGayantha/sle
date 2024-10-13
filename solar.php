@@ -3,7 +3,7 @@ include("./header.php");
 
 ?>
 <div class="content">
-    <h1>Solar Department</h1>
+    <h1>Solar Department </h1>
     <button class="btn" onclick="openImageForm()" style="margin-bottom: 10px;">Add Image</button>
 
     <div class="card">
