@@ -3,11 +3,15 @@ session_start();
 if (isset($_SESSION["name"])) {
     include 'config.php';
 
-    // Directory where you want to save the uploaded images
-    $target_dir = "uploads/";
-
     // Get date from user
     $date = $_POST['date'];
+    $plant_name = $_POST['plant'];
+
+    // Sanitize the plant name to prevent directory traversal attacks
+    $plant_name = preg_replace('/[^a-zA-Z0-9_-]/', '', $plant_name);
+
+    // Define the target directory based on the plant name
+    $target_dir = "uploads/$plant_name/";
 
     // Initialize an array to store the image names
     $imageNames = [];
@@ -36,15 +40,16 @@ if (isset($_SESSION["name"])) {
     }
 
     // Prepare the SQL query
-    $sql = "INSERT INTO scalp_image(date, image_1, image_2, image_3, image_4) VALUES(?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO plant_image(date,plant, image_1, image_2, image_3, image_4) VALUES(?, ?, ?, ?, ?, ?)";
     $statment = $connection->prepare($sql);
 
     // Bind parameters to the SQL query
-    $statment->bind_param("sssss", $date, $imageNames[0], $imageNames[1], $imageNames[2], $imageNames[3]);
+    $statment->bind_param("ssssss", $date,$plant_name, $imageNames[0], $imageNames[1], $imageNames[2], $imageNames[3]);
 
     // Execute the query
     $statment->execute();
 
-    // Redirect to another page after successful operation
-    header("Location: ./Aluminum.php");
+    // Redirect back to the previous page
+    header("Location: " . $_SERVER['HTTP_REFERER']);
+    exit();
 }

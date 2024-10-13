@@ -13,12 +13,12 @@ include("./header.php");
                 <?php
                 include 'config.php';
 
-                $sql = "SELECT * FROM scalp_image ORDER BY id DESC LIMIT 1";
+                $sql = "SELECT * FROM plant_image WHERE plant = 'scalp' ORDER BY id DESC LIMIT 1";
                 $result = mysqli_query($connection, $sql);
                 $image_name = $result->fetch_assoc();
 
                 if (!empty($image_name['image_1'])) {
-                    echo '<a href="javascript:void(0)"><img src="uploads/' . htmlspecialchars($image_name['image_1']) . '" alt=""></a>';
+                    echo '<a href="javascript:void(0)"><img src="uploads/scalp/' . htmlspecialchars($image_name['image_1']) . '" alt=""></a>';
                 }
                 ?>
             </div>
@@ -34,12 +34,12 @@ include("./header.php");
                 <?php
                 include 'config.php';
 
-                $sql = "SELECT * FROM scalp_image ORDER BY id DESC LIMIT 1";
+                $sql = "SELECT * FROM plant_image WHERE plant = 'scalp' ORDER BY id DESC LIMIT 1";
                 $result = mysqli_query($connection, $sql);
                 $image_name = $result->fetch_assoc();
 
                 if (!empty($image_name['image_2'])) {
-                    echo '<a href="javascript:void(0)"><img src="uploads/' . htmlspecialchars($image_name['image_2']) . '" alt=""></a>';
+                    echo '<a href="javascript:void(0)"><img src="uploads/scalp/' . htmlspecialchars($image_name['image_2']) . '" alt=""></a>';
                 }
                 ?>
             </div>
@@ -55,12 +55,12 @@ include("./header.php");
                 <?php
                 include 'config.php';
 
-                $sql = "SELECT * FROM scalp_image ORDER BY id DESC LIMIT 1";
+                $sql = "SELECT * FROM plant_image WHERE plant = 'scalp' ORDER BY id DESC LIMIT 1";
                 $result = mysqli_query($connection, $sql);
                 $image_name = $result->fetch_assoc();
 
                 if (!empty($image_name['image_3'])) {
-                    echo '<a href="javascript:void(0)"><img src="uploads/' . htmlspecialchars($image_name['image_3']) . '" alt=""></a>';
+                    echo '<a href="javascript:void(0)"><img src="uploads/scalp/' . htmlspecialchars($image_name['image_3']) . '" alt=""></a>';
                 }
                 ?>
             </div>
@@ -76,12 +76,12 @@ include("./header.php");
                 <?php
                 include 'config.php';
 
-                $sql = "SELECT * FROM scalp_image ORDER BY id DESC LIMIT 1";
+                $sql = "SELECT * FROM plant_image WHERE plant = 'scalp' ORDER BY id DESC LIMIT 1";
                 $result = mysqli_query($connection, $sql);
                 $image_name = $result->fetch_assoc();
 
                 if (!empty($image_name['image_4'])) {
-                    echo '<a href="javascript:void(0)"><img src="uploads/' . htmlspecialchars($image_name['image_4']) . '" alt=""></a>';
+                    echo '<a href="javascript:void(0)"><img src="uploads/scalp/' . htmlspecialchars($image_name['image_4']) . '" alt=""></a>';
                 }
                 ?>
             </div>
@@ -225,12 +225,13 @@ include("./header.php");
 <!-- scalp_attendance start -->
 
 <div id="image-popup-form" class="popup_form">
-    <form action="./add_scalp_image.php" method="post" enctype="multipart/form-data">
+    <form action="./add_plant_image.php" method="post" enctype="multipart/form-data">
         <h2>ADD IMAGE</h2>
         <input type="file" name="image1" required />
         <input type="file" name="image2" />
         <input type="file" name="image3" />
         <input type="file" name="image4" />        
+        <input type="hidden" name="plant" value="scalp" />        
         <br />
         <input type="date" name="date" required placeholder="date" />
         <br />
