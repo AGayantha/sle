@@ -125,11 +125,165 @@
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
         
-    i{
-      margin: 20px;
-    }
   
   
   }
     /* plant image status End */
+    .add-comment-button {
+      margin-top: 15px;
+      margin-left: 15px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      background: none;
+      border: none;
+      color: #007bff;
+  }
+
+  /* Modal styling */
+  .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+  }
+
+  .modal-content {
+      background-color: #fff;
+      width: 300px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      max-height: 80%;
+      overflow-y: auto;
+  }
+
+  .modal-content h3 {
+      margin-top: 0;
+      text-align: center;
+      font-size: 1.2rem;
+  }
+
+  /* Chat box styling */
+        /* Button styling */
+        .add-comment-button {
+          margin-top: 15px;
+          margin-left: 15px;
+          cursor: pointer;
+          font-size: 1.2rem;
+          background: none;
+          border: none;
+          color: #007bff;
+      }
+
+      /* Modal styling */
+      .modal {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.6);
+          justify-content: center;
+          align-items: center;
+      }
+
+      .modal-content {
+          background-color: #fff;
+          width: 300px;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+          max-height: 80%;
+          overflow-y: auto;
+          position: relative;
+      }
+
+      .modal-content h3 {
+          margin-top: 0;
+          text-align: center;
+          font-size: 1.2rem;
+      }
+
+      /* Chat box styling */
+      .chat-box {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          margin-top: 15px;
+      }
+
+      .chat-message {
+          display: flex;
+          flex-direction: column;
+          background-color: #f4f4f4;
+          padding: 10px;
+          border-radius: 15px;
+          font-size: 0.9rem;
+          max-width: 80%;
+      }
+
+      .chat-message.user {
+          align-self: flex-end;
+          background-color: #007bff;
+          color: #fff;
+      }
+
+      .username {
+          font-weight: bold;
+          margin-bottom: 5px;
+          font-size: 0.8rem;
+          color: blue;
+      }
+
+      /* Text area and button styling */
+      .add-comment {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          margin-top: 10px;
+      }
+
+      .add-comment textarea {
+          resize: none;
+          padding: 8px;
+          font-size: 0.9rem;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+      }
+
+      .add-comment button {
+          padding: 8px;
+          font-size: 0.9rem;
+          border: none;
+          border-radius: 5px;
+          background-color: #007bff;
+          color: white;
+          cursor: pointer;
+      }
+
+      .add-comment button:hover {
+          background-color: #0056b3;
+      }
+
+      /* Close button */
+      .close-modal {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          font-size: 1.2rem;
+          cursor: pointer;
+          color: #333;
+      }
+
+
+
+
+
   /* End dashboard css */
+

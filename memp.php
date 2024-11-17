@@ -1,6 +1,5 @@
 <?php
 include("./header.php");
-
 ?>
 
 <div class="content">
@@ -26,7 +25,10 @@ include("./header.php");
             </div>
             <?php if (!empty($image_name['image_1'])): ?>
                 <div class="text">
-                    <p style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></p>
+                    <button class="add-comment-button" onclick="addComments(<?= $image_name['id'] ?> , 'image_1')">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <span style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
                 </div>
             <?php endif; ?>
         </div>
@@ -49,7 +51,10 @@ include("./header.php");
             </div>
             <?php if (!empty($image_name['image_2'])): ?>
                 <div class="text">
-                    <p style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></p>
+                    <button class="add-comment-button" onclick="addComments(<?= $image_name['id'] ?> , 'image_2')">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <span style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
                 </div>
             <?php endif; ?>
         </div>
@@ -72,7 +77,10 @@ include("./header.php");
             </div>
             <?php if (!empty($image_name['image_3'])): ?>
                 <div class="text">
-                    <p style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></p>
+                    <button class="add-comment-button" onclick="addComments(<?= $image_name['id'] ?> , 'image_3')">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <span style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
                 </div>
             <?php endif; ?>
         </div>
@@ -95,7 +103,10 @@ include("./header.php");
             </div>
             <?php if (!empty($image_name['image_4'])): ?>
                 <div class="text">
-                    <p style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></p>
+                    <button class="add-comment-button" onclick="addComments(<?= $image_name['id'] ?> , 'image_4')">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <span style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
                 </div>
             <?php endif; ?>
         </div>
@@ -112,7 +123,7 @@ include("./header.php");
                 <td>Good Shutters</td>
                 <td>Defect Covers</td>
                 <td>Defect Bases</td>
-                <td>Defect Shutters</td> 
+                <td>Defect Shutters</td>
             </tr>
         </thead>
         <tbody>
@@ -127,8 +138,8 @@ include("./header.php");
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         echo "<td>" . $row['date'] . "</td>
-                        <td>" . $row['dispatch'] ."</td>
-                        <td>". $row['manufactured']. " </td>
+                        <td>" . $row['dispatch'] . "</td>
+                        <td>" . $row['manufactured'] . " </td>
                         <td>" . $row['good_covers'] . "</td>
                         <td>" . $row['good_bases'] . "</td>
                         <td>" . $row['good_shutters'] . "</td>
@@ -147,9 +158,9 @@ include("./header.php");
                     <button style="margin-bottom: 20px;" class="btn" onclick="openPopupForm()">Add-Data</button>
                     <button style="margin-bottom: 20px;" class="btn" onclick="openPopupForm2()">Generate-Data</button>
                     <?php
-                     if ($_SESSION['role'] == 'admin') {
-                    echo "<button class='btn' onclick='opendeleteForm()'>Delete</button>";
-                     }                    
+                    if ($_SESSION['role'] == 'admin') {
+                        echo "<button class='btn' onclick='opendeleteForm()'>Delete</button>";
+                    }
                     ?>
                 </td>
             </tr>
@@ -161,190 +172,190 @@ include("./header.php");
     <!-- item status Start -->
     <!-- card Start -->
 
-<div class="card"> 
+    <div class="card">
 
         <!-- Hopper -->
-    <div class="form-container">
-        <form id="hopperForm">
-            <?php
-            include 'config.php';
-            $sql = "SELECT * FROM status_memp WHERE id='1' ";
-            $result = mysqli_query($connection, $sql);
-            $color = $result->fetch_assoc();
-            echo "<a href='update_memp_status.php?id=$color[id]'>Hopper</a>";
-            echo "<input style='background-color :".$color['color'].";' type='text'>";
-            ?>
-        </form>
-    </div>
+        <div class="form-container">
+            <form id="hopperForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_memp WHERE id='1' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_memp_status.php?id=$color[id]'>Hopper</a>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
+                ?>
+            </form>
+        </div>
 
-    <!-- Auto Loader -->
-    <div class="form-container">
-        <form id="autoLoaderForm">
-            <?php
-            include 'config.php';
-            $sql = "SELECT * FROM status_memp WHERE id='2' ";
-            $result = mysqli_query($connection, $sql);
-            $color = $result->fetch_assoc();
-            echo "<a href='update_memp_status.php?id=$color[id]'>Auto Loader</a>";
-            echo "<input style='background-color :".$color['color'].";' type='text'>";
-            ?>
-        </form>
-    </div>
+        <!-- Auto Loader -->
+        <div class="form-container">
+            <form id="autoLoaderForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_memp WHERE id='2' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_memp_status.php?id=$color[id]'>Auto Loader</a>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
+                ?>
+            </form>
+        </div>
 
-    <!-- Chiller -->
-    <div class="form-container">
-        <form id="chillerForm">
-            <?php
-            include 'config.php';
-            $sql = "SELECT * FROM status_memp WHERE id='3' ";
-            $result = mysqli_query($connection, $sql);
-            $color = $result->fetch_assoc();
-            echo "<a href='update_memp_status.php?id=$color[id]'>Chiller</a>";
-            echo "<input style='background-color :".$color['color'].";' type='text'>";
-            ?>
-        </form>
-    </div>
+        <!-- Chiller -->
+        <div class="form-container">
+            <form id="chillerForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_memp WHERE id='3' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_memp_status.php?id=$color[id]'>Chiller</a>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
+                ?>
+            </form>
+        </div>
 
-    <!-- Compressor -->
-    <div class="form-container">
-        <form id="compressorForm">
-            <?php
-            include 'config.php';
-            $sql = "SELECT * FROM status_memp WHERE id='4' ";
-            $result = mysqli_query($connection, $sql);
-            $color = $result->fetch_assoc();
-            echo "<a href='update_memp_status.php?id=$color[id]'>Compressor</a>";
-            echo "<input style='background-color :".$color['color'].";' type='text'>";
-            ?>
-        </form>
-    </div>
+        <!-- Compressor -->
+        <div class="form-container">
+            <form id="compressorForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_memp WHERE id='4' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_memp_status.php?id=$color[id]'>Compressor</a>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
+                ?>
+            </form>
+        </div>
 
-    <!-- Crusher -->
-    <div class="form-container">
-        <form id="crusherForm">
-            <?php
-            include 'config.php';
-            $sql = "SELECT * FROM status_memp WHERE id='5' ";
-            $result = mysqli_query($connection, $sql);
-            $color = $result->fetch_assoc();
-            echo "<a href='update_memp_status.php?id=$color[id]'>Crusher</a>";
-            echo "<input style='background-color :".$color['color'].";' type='text'>";
-            ?>
-        </form>
-    </div>
+        <!-- Crusher -->
+        <div class="form-container">
+            <form id="crusherForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_memp WHERE id='5' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_memp_status.php?id=$color[id]'>Crusher</a>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
+                ?>
+            </form>
+        </div>
 
-    <!-- Material Rubber Building A -->
-    <div class="form-container">
-        <form id="materialRubberBuildingAForm">
-            <?php
-            include 'config.php';
-            $sql = "SELECT * FROM status_memp WHERE id='6' ";
-            $result = mysqli_query($connection, $sql);
-            $color = $result->fetch_assoc();
-            echo "<a href='update_memp_status.php?id=$color[id]'>Material Rubber Building A</a>";
-            echo "<input style='background-color :".$color['color'].";' type='text'>";
-            ?>
-        </form>
-    </div>
+        <!-- Material Rubber Building A -->
+        <div class="form-container">
+            <form id="materialRubberBuildingAForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_memp WHERE id='6' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_memp_status.php?id=$color[id]'>Material Rubber Building A</a>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
+                ?>
+            </form>
+        </div>
 
-    <!-- Material Rubber Building B -->
-    <div class="form-container">
-        <form id="materialRubberBuildingBForm">
-            <?php
-            include 'config.php';
-            $sql = "SELECT * FROM status_memp WHERE id='7' ";
-            $result = mysqli_query($connection, $sql);
-            $color = $result->fetch_assoc();
-            echo "<a href='update_memp_status.php?id=$color[id]'>Material Rubber Building B</a>";
-            echo "<input style='background-color :".$color['color'].";' type='text'>";
-            ?>
-        </form>
-    </div>
+        <!-- Material Rubber Building B -->
+        <div class="form-container">
+            <form id="materialRubberBuildingBForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_memp WHERE id='7' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_memp_status.php?id=$color[id]'>Material Rubber Building B</a>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
+                ?>
+            </form>
+        </div>
 
-    <!-- Polycarbonate -->
-    <div class="form-container">
-        <form id="polycarbonateForm">
-            <?php
-            include 'config.php';
-            $sql = "SELECT * FROM status_memp WHERE id='8' ";
-            $result = mysqli_query($connection, $sql);
-            $color = $result->fetch_assoc();
-            echo "<a href='update_memp_status.php?id=$color[id]'>Polycarbonate</a>";
-            echo "<input style='background-color :".$color['color'].";' type='text'>";
-            ?>
-        </form>
-    </div>
+        <!-- Polycarbonate -->
+        <div class="form-container">
+            <form id="polycarbonateForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_memp WHERE id='8' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_memp_status.php?id=$color[id]'>Polycarbonate</a>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
+                ?>
+            </form>
+        </div>
 
-    <!-- Master Batch -->
-    <div class="form-container">
-        <form id="masterBatchForm">
-            <?php
-            include 'config.php';
-            $sql = "SELECT * FROM status_memp WHERE id='9' ";
-            $result = mysqli_query($connection, $sql);
-            $color = $result->fetch_assoc();
-            echo "<a href='update_memp_status.php?id=$color[id]'>Master Batch</a>";
-            echo "<input style='background-color :".$color['color'].";' type='text'>";
-            ?>
-        </form>
-    </div>
+        <!-- Master Batch -->
+        <div class="form-container">
+            <form id="masterBatchForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_memp WHERE id='9' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_memp_status.php?id=$color[id]'>Master Batch</a>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
+                ?>
+            </form>
+        </div>
 
-    <!-- Spring -->
-    <div class="form-container">
-        <form id="springForm">
-            <?php
-            include 'config.php';
-            $sql = "SELECT * FROM status_memp WHERE id='10' ";
-            $result = mysqli_query($connection, $sql);
-            $color = $result->fetch_assoc();
-            echo "<a href='update_memp_status.php?id=$color[id]'>Spring</a>";
-            echo "<input style='background-color :".$color['color'].";' type='text'>";
-            ?>
-        </form>
-    </div>
+        <!-- Spring -->
+        <div class="form-container">
+            <form id="springForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_memp WHERE id='10' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_memp_status.php?id=$color[id]'>Spring</a>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
+                ?>
+            </form>
+        </div>
 
-    <!-- Scotch Tape (Sellotape) -->
-    <div class="form-container">
-        <form id="scotchTapeForm">
-            <?php
-            include 'config.php';
-            $sql = "SELECT * FROM status_memp WHERE id='11' ";
-            $result = mysqli_query($connection, $sql);
-            $color = $result->fetch_assoc();
-            echo "<a href='update_memp_status.php?id=$color[id]'>Scotch Tape (Sellotape)</a>";
-            echo "<input style='background-color :".$color['color'].";' type='text'>";
-            ?>
-        </form>
-    </div>
+        <!-- Scotch Tape (Sellotape) -->
+        <div class="form-container">
+            <form id="scotchTapeForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_memp WHERE id='11' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_memp_status.php?id=$color[id]'>Scotch Tape (Sellotape)</a>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
+                ?>
+            </form>
+        </div>
 
-    <!-- Corrugated Box -->
-    <div class="form-container">
-        <form id="corrugatedBoxForm">
-            <?php
-            include 'config.php';
-            $sql = "SELECT * FROM status_memp WHERE id='12' ";
-            $result = mysqli_query($connection, $sql);
-            $color = $result->fetch_assoc();
-            echo "<a href='update_memp_status.php?id=$color[id]'>Corrugated Box</a>";
-            echo "<input style='background-color :".$color['color'].";' type='text'>";
-            ?>
-        </form>
-    </div>
+        <!-- Corrugated Box -->
+        <div class="form-container">
+            <form id="corrugatedBoxForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_memp WHERE id='12' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_memp_status.php?id=$color[id]'>Corrugated Box</a>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
+                ?>
+            </form>
+        </div>
 
-    <!-- Safety Gear -->
-    <div class="form-container">
-        <form id="safetyGearForm">
-            <?php
-            include 'config.php';
-            $sql = "SELECT * FROM status_memp WHERE id='13' ";
-            $result = mysqli_query($connection, $sql);
-            $color = $result->fetch_assoc();
-            echo "<a href='update_memp_status.php?id=$color[id]'>Safety Gear</a>";
-            echo "<input style='background-color :".$color['color'].";' type='text'>";
-            ?>
-        </form>
+        <!-- Safety Gear -->
+        <div class="form-container">
+            <form id="safetyGearForm">
+                <?php
+                include 'config.php';
+                $sql = "SELECT * FROM status_memp WHERE id='13' ";
+                $result = mysqli_query($connection, $sql);
+                $color = $result->fetch_assoc();
+                echo "<a href='update_memp_status.php?id=$color[id]'>Safety Gear</a>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
+                ?>
+            </form>
+        </div>
     </div>
-</div>
 
     <!-- card end -->
 
@@ -417,8 +428,8 @@ include("./header.php");
             <input type="file" name="image1" required />
             <input type="file" name="image2" />
             <input type="file" name="image3" />
-            <input type="file" name="image4" />        
-            <input type="hidden" name="plant" value="memp" />        
+            <input type="file" name="image4" />
+            <input type="hidden" name="plant" value="memp" />
             <br />
             <input type="date" name="date" required placeholder="date" />
             <br />
@@ -426,7 +437,7 @@ include("./header.php");
             <button type="button" onclick="closePopupForm()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
         </form>
     </div>
-    
+
 </div>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -464,7 +475,9 @@ include("./header.php");
 
     $connection->close();
     ?>
-    google.charts.load("current", { packages: ["corechart"] });
+    google.charts.load("current", {
+        packages: ["corechart"]
+    });
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
@@ -476,10 +489,23 @@ include("./header.php");
         var options = {
             title: "Meter Manufacturing GENERATION",
             curveType: "function",
-            legend: { position: "none" },
-            backgroundColor: { fill: "transparent" },
-            chartArea: { left: 70, top: 50, width: '100%', height: '75%' },
-            vAxes: { 0: { title: 'dispatch' } }
+            legend: {
+                position: "none"
+            },
+            backgroundColor: {
+                fill: "transparent"
+            },
+            chartArea: {
+                left: 70,
+                top: 50,
+                width: '100%',
+                height: '75%'
+            },
+            vAxes: {
+                0: {
+                    title: 'dispatch'
+                }
+            }
         };
 
         var chart = new google.visualization.LineChart(
@@ -506,6 +532,7 @@ include("./header.php");
         mydiv.classList.add('blurred');
         table.classList.add('blurred');
     }
+
     function openPopupForm2() {
         document.getElementById('popup-form2').style.display = 'block';
         var divToBlur = document.getElementById('blurredDiv');
@@ -517,6 +544,7 @@ include("./header.php");
         mydiv.classList.add('blurred');
         table.classList.add('blurred');
     }
+
     function openPopupForm3() {
         document.getElementById('popup-form3').style.display = 'block';
         var divToBlur = document.getElementById('blurredDiv');
@@ -528,6 +556,7 @@ include("./header.php");
         mydiv.classList.add('blurred');
         table.classList.add('blurred');
     }
+
     function opendeleteForm() {
         document.getElementById('popup-form4').style.display = 'block';
         var divToBlur = document.getElementById('blurredDiv');
@@ -539,6 +568,7 @@ include("./header.php");
         mydiv.classList.add('blurred');
         table.classList.add('blurred');
     }
+
     function closePopupForm() {
         document.getElementById('popup-form').style.display = 'none';
         document.getElementById('popup-form2').style.display = 'none';

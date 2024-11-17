@@ -25,7 +25,10 @@ include("./header.php");
             </div>
             <?php if (!empty($image_name['image_1'])): ?>
                 <div class="text">
-                    <p style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></p>
+                    <button class="add-comment-button" onclick="addComments(<?= $image_name['id'] ?> , 'image_1')">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <span style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
                 </div>
             <?php endif; ?>
         </div>
@@ -48,7 +51,10 @@ include("./header.php");
             </div>
             <?php if (!empty($image_name['image_2'])): ?>
                 <div class="text">
-                    <p style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></p>
+                    <button class="add-comment-button" onclick="addComments(<?= $image_name['id'] ?> , 'image_2')">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <span style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
                 </div>
             <?php endif; ?>
         </div>
@@ -71,7 +77,10 @@ include("./header.php");
             </div>
             <?php if (!empty($image_name['image_3'])): ?>
                 <div class="text">
-                    <p style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></p>
+                    <button class="add-comment-button" onclick="addComments(<?= $image_name['id'] ?> , 'image_3')">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <span style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
                 </div>
             <?php endif; ?>
         </div>
@@ -94,12 +103,14 @@ include("./header.php");
             </div>
             <?php if (!empty($image_name['image_4'])): ?>
                 <div class="text">
-                    <p style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></p>
+                    <button class="add-comment-button" onclick="addComments(<?= $image_name['id'] ?> , 'image_4')">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <span style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
                 </div>
             <?php endif; ?>
         </div>
     </div>
-
     <table id="deduruoya_table" class="plant_table">
         <thead>
             <tr>
