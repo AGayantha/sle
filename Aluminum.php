@@ -26,10 +26,7 @@ include("./header.php");
             </div>
             <?php if (!empty($image_name['image_1'])): ?>
                 <div class="text">
-                    <button class="add-comment-button" onclick="addComments(<?= $image_name['id'] ?> , 'image_1')">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <span style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
+                    <p style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
                 </div>
             <?php endif; ?>
         </div>
@@ -52,10 +49,7 @@ include("./header.php");
             </div>
             <?php if (!empty($image_name['image_2'])): ?>
                 <div class="text">
-                    <button class="add-comment-button" onclick="addComments(<?= $image_name['id'] ?> , 'image_2')">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <span style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
+                    <p style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
                 </div>
             <?php endif; ?>
         </div>
@@ -78,10 +72,7 @@ include("./header.php");
             </div>
             <?php if (!empty($image_name['image_3'])): ?>
                 <div class="text">
-                    <button class="add-comment-button" onclick="addComments(<?= $image_name['id'] ?> , 'image_3')">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <span style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
+                    <p style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
                 </div>
             <?php endif; ?>
         </div>
@@ -104,14 +95,16 @@ include("./header.php");
             </div>
             <?php if (!empty($image_name['image_4'])): ?>
                 <div class="text">
-                    <button class="add-comment-button" onclick="addComments(<?= $image_name['id'] ?> , 'image_4')">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <span style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
+                    <p style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
                 </div>
             <?php endif; ?>
         </div>
     </div>
+
+    <?php
+    $plant_name = 'scalp';
+    include("./messageModal.php");
+    ?>
 
     <!-- 2024_7_28 add Task -->
     <table id="deduruoya_table" class="plant_table">
@@ -250,8 +243,8 @@ include("./header.php");
         <input type="file" name="image1" required />
         <input type="file" name="image2" />
         <input type="file" name="image3" />
-        <input type="file" name="image4" />        
-        <input type="hidden" name="plant" value="scalp" />        
+        <input type="file" name="image4" />
+        <input type="hidden" name="plant" value="scalp" />
         <br />
         <input type="date" name="date" required placeholder="date" />
         <br />

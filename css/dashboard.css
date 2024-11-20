@@ -124,8 +124,10 @@
     background-color:white;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-        
-  
+    
+    i{
+      margin: 20px;
+    }  
   
   }
     /* plant image status End */
@@ -209,81 +211,3 @@
           text-align: center;
           font-size: 1.2rem;
       }
-
-      /* Chat box styling */
-      .chat-box {
-          display: flex;
-          flex-direction: column;
-          gap: 15px;
-          margin-top: 15px;
-      }
-
-      .chat-message {
-          display: flex;
-          flex-direction: column;
-          background-color: #f4f4f4;
-          padding: 10px;
-          border-radius: 15px;
-          font-size: 0.9rem;
-          max-width: 80%;
-      }
-
-      .chat-message.user {
-          align-self: flex-end;
-          background-color: #007bff;
-          color: #fff;
-      }
-
-      .username {
-          font-weight: bold;
-          margin-bottom: 5px;
-          font-size: 0.8rem;
-          color: blue;
-      }
-
-      /* Text area and button styling */
-      .add-comment {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-          margin-top: 10px;
-      }
-
-      .add-comment textarea {
-          resize: none;
-          padding: 8px;
-          font-size: 0.9rem;
-          border: 1px solid #ddd;
-          border-radius: 5px;
-      }
-
-      .add-comment button {
-          padding: 8px;
-          font-size: 0.9rem;
-          border: none;
-          border-radius: 5px;
-          background-color: #007bff;
-          color: white;
-          cursor: pointer;
-      }
-
-      .add-comment button:hover {
-          background-color: #0056b3;
-      }
-
-      /* Close button */
-      .close-modal {
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          font-size: 1.2rem;
-          cursor: pointer;
-          color: #333;
-      }
-
-
-
-
-
-  /* End dashboard css */
-

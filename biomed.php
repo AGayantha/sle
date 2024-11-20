@@ -26,10 +26,8 @@ include("./header.php");
             </div>
             <?php if (!empty($image_name['image_1'])): ?>
                 <div class="text">
-                    <button class="add-comment-button" onclick="addComments(<?= $image_name['id'] ?> , 'image_1')">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <span style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
+
+                    <p style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
                 </div>
             <?php endif; ?>
         </div>
@@ -52,10 +50,8 @@ include("./header.php");
             </div>
             <?php if (!empty($image_name['image_2'])): ?>
                 <div class="text">
-                    <button class="add-comment-button" onclick="addComments(<?= $image_name['id'] ?> , 'image_2')">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <span style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
+
+                    <p style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
                 </div>
             <?php endif; ?>
         </div>
@@ -78,10 +74,8 @@ include("./header.php");
             </div>
             <?php if (!empty($image_name['image_3'])): ?>
                 <div class="text">
-                    <button class="add-comment-button" onclick="addComments(<?= $image_name['id'] ?> , 'image_3')">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <span style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
+
+                    <p style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
                 </div>
             <?php endif; ?>
         </div>
@@ -104,14 +98,17 @@ include("./header.php");
             </div>
             <?php if (!empty($image_name['image_4'])): ?>
                 <div class="text">
-                    <button class="add-comment-button" onclick="addComments(<?= $image_name['id'] ?> , 'image_4')">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <span style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
+
+                    <p style="padding-left: 80px; padding-top: 15px;"><?php echo htmlspecialchars($image_name['date']); ?></>
                 </div>
             <?php endif; ?>
         </div>
     </div>
+
+    <?php
+    $plant_name = 'biomed';
+    include("./messageModal.php");
+    ?>
 
     <table id="deduruoya_table" class="plant_table">
         <thead>
@@ -134,7 +131,7 @@ include("./header.php");
                         echo "<td>" . $row['date'] . "</td><td>" . $row['unit'] . " kWh</td><tr>";
                     }
                 }
-                
+
                 ?>
         </tbody>
         <tfoot>
@@ -142,9 +139,9 @@ include("./header.php");
                 <td><button class="btn" onclick="openPopupForm()">Add-Data</button>
                     <button class="btn" onclick="openPopupForm2()">Generate-Data</button>
                     <?php
-                     if ($_SESSION['role'] == 'admin') {
-                    echo "<button class='btn' onclick='opendeleteForm()'>Delete</button>";
-                     }                    
+                    if ($_SESSION['role'] == 'admin') {
+                        echo "<button class='btn' onclick='opendeleteForm()'>Delete</button>";
+                    }
                     ?>
                 </td>
             </tr>
@@ -160,8 +157,8 @@ include("./header.php");
             <input type="file" name="image1" required />
             <input type="file" name="image2" />
             <input type="file" name="image3" />
-            <input type="file" name="image4" />        
-            <input type="hidden" name="plant" value="biomed" />        
+            <input type="file" name="image4" />
+            <input type="hidden" name="plant" value="biomed" />
             <br />
             <input type="date" name="date" required placeholder="date" />
             <br />
@@ -172,7 +169,7 @@ include("./header.php");
 
     <!-- item status Start -->
     <!-- card Start -->
-        
+
     <div class="card">
 
         <!-- Turbine 1 -->
@@ -184,7 +181,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Turbine 1</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -198,7 +195,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Turbine 2</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -212,7 +209,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Generator 1</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -226,7 +223,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Generator 2</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -240,7 +237,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Hydraulic Unit</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -254,7 +251,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Lubrication System</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -268,7 +265,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Generator</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -282,7 +279,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Dewatering System</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -296,7 +293,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Medium Voltage Panel</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -310,7 +307,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Low Voltage Panel</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -324,7 +321,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Battery Pack</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -338,7 +335,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Control Panel</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -352,7 +349,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Station Service Panel</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -366,7 +363,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Motor Control Panel</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -380,7 +377,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Decentralized Control Common</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -394,7 +391,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Inlet Valve and Control System</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -408,7 +405,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Bypass Valve and Control System (Water Bypass)</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -422,7 +419,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Auxiliary Generator (Outside)</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -436,7 +433,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Transformer</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -450,7 +447,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>CT PT Transformer</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -464,7 +461,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Auto Re-closer</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -478,7 +475,7 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Mechanical Bypass Unit (33,000)</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
@@ -492,12 +489,12 @@ include("./header.php");
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
                 echo "<a href='update_biomed_status.php?id=$color[id]'>Overhead Crane</a>";
-                echo "<input style='background-color :".$color['color'].";' type='text'>";
+                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
-            
-    </div> 
+
+    </div>
 
     <!-- card end -->
 
@@ -584,7 +581,9 @@ include("./header.php");
 
     $connection->close();
     ?>
-    google.charts.load("current", { packages: ["corechart"] });
+    google.charts.load("current", {
+        packages: ["corechart"]
+    });
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
@@ -596,10 +595,23 @@ include("./header.php");
         var options = {
             title: "BIOMED HYDRO POWER PLANT ELECTRICITY GENERATION",
             curveType: "function",
-            legend: { position: "none" },
-            backgroundColor: { fill: "transparent" },
-            chartArea: { left: 70, top: 50, width: '100%', height: '75%' },
-            vAxes: { 0: { title: 'M W h' } }
+            legend: {
+                position: "none"
+            },
+            backgroundColor: {
+                fill: "transparent"
+            },
+            chartArea: {
+                left: 70,
+                top: 50,
+                width: '100%',
+                height: '75%'
+            },
+            vAxes: {
+                0: {
+                    title: 'M W h'
+                }
+            }
         };
 
         var chart = new google.visualization.LineChart(
@@ -614,7 +626,7 @@ include("./header.php");
     function openImageForm() {
         document.getElementById('image-popup-form').style.display = 'block';
     }
-    
+
     function openPopupForm() {
         document.getElementById('popup-form').style.display = 'block';
         document.getElementById('curve_chart').style.display = 'none';
@@ -627,6 +639,7 @@ include("./header.php");
         mydiv.classList.add('blurred');
         table.classList.add('blurred');
     }
+
     function openPopupForm2() {
         document.getElementById('popup-form2').style.display = 'block';
         document.getElementById('curve_chart').style.display = 'none';
@@ -639,6 +652,7 @@ include("./header.php");
         mydiv.classList.add('blurred');
         table.classList.add('blurred');
     }
+
     function openPopupForm3() {
         document.getElementById('popup-form3').style.display = 'block';
         document.getElementById('curve_chart').style.display = 'none';
@@ -651,6 +665,7 @@ include("./header.php");
         mydiv.classList.add('blurred');
         table.classList.add('blurred');
     }
+
     function opendeleteForm() {
         document.getElementById('popup-form4').style.display = 'block';
         document.getElementById('curve_chart').style.display = 'none';
@@ -663,6 +678,7 @@ include("./header.php");
         mydiv.classList.add('blurred');
         table.classList.add('blurred');
     }
+
     function closePopupForm() {
         document.getElementById('popup-form').style.display = 'none';
         document.getElementById('popup-form2').style.display = 'none';

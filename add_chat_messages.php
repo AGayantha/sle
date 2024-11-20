@@ -5,14 +5,13 @@ if (isset($_SESSION["name"])) {
 
     $username = $_SESSION["name"];
     $message = $_POST['message'];
-    $image_id = $_POST['image_id'];
-    $image_name = $_POST['image_name'];
-    $created_at =  $date = date('Y-m-d');;
+    $plant_name = $_POST['plant_name'];
+    $created_at = date('Y-m-d H:i:s');
 
-    $sql = "insert into chat_messages(username, message, image_id, image_name, created_at) values(?,?,?,?,?)";
+    $sql = "insert into chat_messages(username, message, plant_name, created_at) values(?,?,?,?)";
     $statment = $connection->prepare($sql);
 
-    $statment->bind_param("sssss",$username, $message, $image_id, $image_name, $created_at);
+    $statment->bind_param("ssss",$username, $message, $plant_name, $created_at);
 
     $statment->execute();
 

@@ -98,8 +98,6 @@ if (isset($_SESSION["name"])) {
             echo '<li><a href="./employee.php"><i class="fa-solid fa-user-tie"></i>Empolyee</a></li>';
           }
           ?>
-          <?php include("./messageModal.php"); ?>
-
           
 <!-- user previlage- only addmin can see end-->
 
