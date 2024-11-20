@@ -160,6 +160,66 @@ include("./header.php");
         </tfoot>
     </table>
 
+    <table id="deduruoya_table" class="plant_table" style="width: 50vw;">
+        <thead>
+            <tr>
+                <td>CEB</td>
+                <td>LECO</td>
+                <td>CEB COVERS</td>
+                <td>LECO COVERS</td>
+                <td>Base</td>
+                <td>Shutters</td>
+                <td>PC /KG</td>
+                <td>MB /KG</td>
+                <td>Cover Beading</td>
+                <td>shutter beading</td>
+                <td>Springs</td>
+                <td>Corrugated</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <?php
+                require_once 'config.php';
+                $query = "SELECT * FROM memp_production ORDER BY id DESC LIMIT 1";
+                $result = mysqli_query($connection, $query);
+
+                if ($result->num_rows > 0) {
+                    $row = $result->fetch_assoc(); // Fetch only one row since it's limited to 1
+                    echo "<td>" . $row['ceb'] . "</td>
+            <td>" . $row['leco'] . "</td>
+            <td>" . $row['ceb_covers'] . " </td>
+            <td>" . $row['leco_covers'] . "</td>
+            <td>" . $row['base'] . "</td>
+            <td>" . $row['shutters'] . "</td>
+            <td>" . $row['pc_kg'] . "</td>
+            <td>" . $row['mb_kg'] . "</td>
+            <td>" . $row['cover_beading'] . "</td>
+            <td>" . $row['shutter_beading'] . "</td>
+            <td>" . $row['springs'] . "</td>
+            <td>" . $row['corrugated_boxes'] . "</td>";
+                }
+                ?>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="12">
+                    <!-- Add the button inside the tfoot -->
+                    <?php
+                    // Only display the button if there is data
+                    if ($result->num_rows > 0) {
+                        // Pass the row data to the button using json_encode and htmlspecialchars
+                        echo '<button class="btn" onclick="openPopupForm5(' . htmlspecialchars(json_encode($row)) . ')">Update-Data</button>';
+                    }
+                    ?>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+
     <div id="curve_chart" class="curve_chart"></div>
 
     <!-- item status Start -->
@@ -415,6 +475,89 @@ include("./header.php");
         </form>
     </div>
 
+    <div id="popup-form5" class="popup_form">
+        <form action="./update_memp.php" method="post">
+            <div style="margin: 15px;">
+                <label for="ceb" style="display: block; margin-bottom: 5px; font-weight: bold;">CEB</label>
+                <input type="text" name="ceb" id="ceb" required style="width: 200px; display: block; margin-bottom: 10px;" />
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="leco" style="display: block; margin-bottom: 5px; font-weight: bold;">LECO</label>
+                <input type="text" name="leco" id="leco" required style="width: 200px; display: block; margin-bottom: 10px;" />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="ceb_covers" style="display: block; margin-bottom: 5px; font-weight: bold;">CEB COVERS</label>
+                <input type="text" name="ceb_covers" id="ceb_covers" required style="width: 200px; display: block; margin-bottom: 10px;" />
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="leco_covers" style="display: block; margin-bottom: 5px; font-weight: bold;">LECO COVERS</label>
+                <input type="text" name="leco_covers" id="leco_covers" required style="width: 200px; display: block; margin-bottom: 10px;" />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="base" style="display: block; margin-bottom: 5px; font-weight: bold;">Base</label>
+                <input type="text" name="base" id="base" required style="width: 200px; display: block; margin-bottom: 10px;" />
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="shutters" style="display: block; margin-bottom: 5px; font-weight: bold;">Shutters</label>
+                <input type="text" name="shutters" id="shutters" required style="width: 200px; display: block; margin-bottom: 10px;" />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="pc_kg" style="display: block; margin-bottom: 5px; font-weight: bold;">PC/KG</label>
+                <input type="text" name="pc_kg" id="pc_kg" required style="width: 200px; display: block; margin-bottom: 10px;" />
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="mb_kg" style="display: block; margin-bottom: 5px; font-weight: bold;">MB/KG</label>
+                <input type="text" name="mb_kg" id="mb_kg" required style="width: 200px; display: block; margin-bottom: 10px;" />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="cover_beading" style="display: block; margin-bottom: 5px; font-weight: bold;">Cover Beading</label>
+                <input type="text" name="cover_beading" id="cover_beading" required style="width: 200px; display: block; margin-bottom: 10px;" />
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="shutter_beading" style="display: block; margin-bottom: 5px; font-weight: bold;">Shutter Beading</label>
+                <input type="text" name="shutter_beading" id="shutter_beading" required style="width: 200px; display: block; margin-bottom: 10px;" />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="springs" style="display: block; margin-bottom: 5px; font-weight: bold;">Springs</label>
+                <input type="text" name="springs" id="springs" required style="width: 200px; display: block; margin-bottom: 10px;" />
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="corrugated" style="display: block; margin-bottom: 5px; font-weight: bold;">Corrugated</label>
+                <input type="text" name="corrugated" id="corrugated" required style="width: 200px; display: block; margin-bottom: 10px;" />
+            </div>
+
+            <!-- Hidden field for the ID of the row being updated -->
+            <input type="hidden" name="id" id="update_id" />
+
+            <input type="submit" value="Update" />
+            <button type="button" onclick="closePopupForm()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+        </form>
+    </div>
+
+
+    <style>
+        /* Set uniform width for all inputs */
+        #popup-form5 input[type="text"] {
+            width: 200px;
+            /* Adjust the width as needed */
+            margin-bottom: 10px;
+            /* Optional: for spacing */
+        }
+
+        /* Ensure the form inputs are aligned consistently */
+        #popup-form5 div {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
+
+
+
     <div id="image-popup-form" class="popup_form">
         <form action="./add_plant_image.php" method="post" enctype="multipart/form-data">
             <h2>ADD IMAGE</h2>
@@ -550,6 +693,30 @@ include("./header.php");
         table.classList.add('blurred');
     }
 
+    function openPopupForm5(rowData) {
+
+        if (rowData) {
+            document.getElementById('ceb').value = rowData.ceb;
+            document.getElementById('leco').value = rowData.leco;
+            document.getElementById('ceb_covers').value = rowData.ceb_covers;
+            document.getElementById('leco_covers').value = rowData.leco_covers;
+            document.getElementById('base').value = rowData.base;
+            document.getElementById('shutters').value = rowData.shutters;
+            document.getElementById('pc_kg').value = rowData.pc_kg;
+            document.getElementById('mb_kg').value = rowData.mb_kg;
+            document.getElementById('cover_beading').value = rowData.cover_beading;
+            document.getElementById('shutter_beading').value = rowData.shutter_beading;
+            document.getElementById('springs').value = rowData.springs;
+            document.getElementById('corrugated').value = rowData.corrugated_boxes;
+            document.getElementById('update_id').value = rowData.id;
+        } else {
+            alert('No data found!');
+        }
+
+        document.getElementById('popup-form5').style.display = 'block';
+
+    }
+
     function opendeleteForm() {
         document.getElementById('popup-form4').style.display = 'block';
         var divToBlur = document.getElementById('blurredDiv');
@@ -569,6 +736,7 @@ include("./header.php");
         document.getElementById('popup-form4').style.display = 'none';
         document.getElementById('curve_chart').style.display = 'block';
         document.getElementById('image-popup-form').style.display = 'none';
+        document.getElementById('popup-form5').style.display = 'none';
         var divToBlur = document.getElementById('blurredDiv');
         var mydiv = document.getElementById('myDiv');
         var table = document.getElementById('deduruoya_table');
