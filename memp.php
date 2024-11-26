@@ -820,7 +820,7 @@ include("./header.php");
         var data = google.visualization.arrayToDataTable(jsonData);
 
         var options = {
-            title: "Meter Manufacturing GENERATION",
+            title: "Meter Manufacturing Generation",
             curveType: "function",
             legend: {
                 position: "none"
