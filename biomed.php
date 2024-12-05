@@ -256,20 +256,6 @@ include("./header.php");
             </form>
         </div>
 
-        <!-- Generator -->
-        <div class="form-container">
-            <form id="generatorForm">
-                <?php
-                include 'config.php';
-                $sql = "SELECT * FROM status_biomed WHERE id='7' ";
-                $result = mysqli_query($connection, $sql);
-                $color = $result->fetch_assoc();
-                echo "<a href='update_biomed_status.php?id=$color[id]'>Generator</a>";
-                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
-                ?>
-            </form>
-        </div>
-
         <!-- Dewatering System -->
         <div class="form-container">
             <form id="dewateringSystemForm">
