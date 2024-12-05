@@ -240,26 +240,28 @@ $connection->close();
     <div class="pie_table">
 
       <table style="height: 100%; width: 100%; ">
-        <tbody>
+      <tbody>
           <tr>
             <td><i style="color: black ; margin-right: 5px;" class="fa-solid fa-circle"></i>Date</td>
             <?php echo "<td style='font-weight: bold; '>" . $d . "</td>"; ?>
           </tr>
           <tr>
             <td><i style="color: #3366CC ; margin-right: 5px;" class="fa-solid fa-circle"></i>Deduruoya</td>
-            <?php echo "<td style='font-weight: bold; '>Rs " . ($row1['Revenue'] ?? '0') . "</td>"; ?>
+            <?php
+            echo "<td style='font-weight: bold;'>Rs " . number_format(($row1['Revenue'] ?? 0), 2) . "</td>";
+            ?>
           </tr>
           <tr>
-            <td><i style="color: #DC3912 ; margin-right: 5px; " class="fa-solid fa-circle"></i>Kubalgama</td>
-            <?php echo "<td style='font-weight: bold; '>Rs " . ($row2['Revenue'] ?? '0') . "</td>"; ?>
+            <td><i style="color: #DC3912; margin-right: 5px;" class="fa-solid fa-circle"></i>Kubalgama</td>
+            <?php echo "<td style='font-weight: bold;'>Rs " . number_format(($row2['Revenue'] ?? 0), 2) . "</td>"; ?>
           </tr>
           <tr>
-            <td><i style="color: #FF9900 ; margin-right: 5px; " class="fa-solid fa-circle"></i>Biomed</td>
-            <?php echo "<td style='font-weight: bold; '>Rs " . ($row3['Revenue'] ?? '0') . "</td>"; ?>
+            <td><i style="color: #FF9900; margin-right: 5px;" class="fa-solid fa-circle"></i>Biomed</td>
+            <?php echo "<td style='font-weight: bold;'>Rs " . number_format(($row3['Revenue'] ?? 0), 2) . "</td>"; ?>
           </tr>
           <tr>
-            <td><i style="color: #109618 ; margin-right: 5px; " class="fa-solid fa-circle"></i>MEMP</td>
-            <?php echo "<td style='font-weight: bold; '>Rs " . ($row4['Revenue'] ?? '0') . "</td>"; ?>
+            <td><i style="color: #109618; margin-right: 5px;" class="fa-solid fa-circle"></i>MEMP</td>
+            <?php echo "<td style='font-weight: bold;'>Rs " . number_format(($row4['Revenue'] ?? 0), 2) . "</td>"; ?>
           </tr>
         </tbody>
       </table>
