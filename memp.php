@@ -109,7 +109,7 @@ include("./header.php");
         <thead>
             <tr>
                 <td>Date</td>
-                <td>Dispatch</td>
+                <td>Dispatched</td>
                 <td>Manufactured</td>
                 <td>Good Covers</td>
                 <td>Good Bases</td>
@@ -160,7 +160,7 @@ include("./header.php");
         </tfoot>
     </table>
 
-    <table id="deduruoya_table" class="plant_table" style="width: 50vw;">
+    <table id="deduruoya_table" class="plant_table">
         <thead>
             <tr>
                 <td>CEB</td>
@@ -174,7 +174,7 @@ include("./header.php");
                 <td>Cover Beading</td>
                 <td>Shutter Beading</td>
                 <td>Springs</td>
-                <td>Corrugated</td>
+                <td>Corrugated Boxes</td>
             </tr>
         </thead>
         <tbody>
@@ -235,7 +235,7 @@ include("./header.php");
                 $sql = "SELECT * FROM status_memp WHERE id='14' ";
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
-                echo "<a href='update_memp_status.php?id=$color[id]'>IMM I</a>";
+                echo "<a href='update_memp_status.php?id=$color[id]'>IMM I<br></a>";
                 echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
@@ -249,7 +249,7 @@ include("./header.php");
                 $sql = "SELECT * FROM status_memp WHERE id='15' ";
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
-                echo "<a href='update_memp_status.php?id=$color[id]'>IMM II</a>";
+                echo "<a href='update_memp_status.php?id=$color[id]'>IMM II<br></a>";
                 echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
@@ -263,26 +263,14 @@ include("./header.php");
                 $sql = "SELECT * FROM status_memp WHERE id='16' ";
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
-                echo "<a href='update_memp_status.php?id=$color[id]'>IMM III</a>";
-                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
-                ?>
-            </form>
-        </div>
-        
-        <!-- Crusher -->
-        <div class="form-container">
-            <form id="crusherForm">
-                <?php
-                include 'config.php';
-                $sql = "SELECT * FROM status_memp WHERE id='5' ";
-                $result = mysqli_query($connection, $sql);
-                $color = $result->fetch_assoc();
-                echo "<a href='update_memp_status.php?id=$color[id]'>Crusher</a>";
+                echo "<a href='update_memp_status.php?id=$color[id]'>IMM III<br></a>";
                 echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
 
+    </div>
+    <div class="card">        
         <!-- Hopper I-->
         <div class="form-container">
             <form id="hopperForm">
@@ -325,20 +313,8 @@ include("./header.php");
             </form>
         </div>
 
-        <!-- Gantry Crane -->
-        <div class="form-container">
-            <form id="crusherForm">
-                <?php
-                include 'config.php';
-                $sql = "SELECT * FROM status_memp WHERE id='25' ";
-                $result = mysqli_query($connection, $sql);
-                $color = $result->fetch_assoc();
-                echo "<a href='update_memp_status.php?id=$color[id]'>Gantry Crane</a>";
-                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
-                ?>
-            </form>
-        </div>
-
+    </div>
+    <div class="card">        
 
         <!-- Auto Loader I -->
         <div class="form-container">
@@ -382,19 +358,8 @@ include("./header.php");
             </form>
         </div>
 
-        <!-- Diesel Generator -->
-        <div class="form-container">
-            <form id="crusherForm">
-                <?php
-                include 'config.php';
-                $sql = "SELECT * FROM status_memp WHERE id='26' ";
-                $result = mysqli_query($connection, $sql);
-                $color = $result->fetch_assoc();
-                echo "<a href='update_memp_status.php?id=$color[id]'>Diesel Generator</a>";
-                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
-                ?>
-            </form>
-        </div>
+    </div>
+    <div class="card"> 
 
         <!-- Chiller I-->
         <div class="form-container">
@@ -404,7 +369,7 @@ include("./header.php");
                 $sql = "SELECT * FROM status_memp WHERE id='3' ";
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
-                echo "<a href='update_memp_status.php?id=$color[id]'>Chiller I</a>";
+                echo "<a href='update_memp_status.php?id=$color[id]'>Chiller I<br></a>";
                 echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
@@ -437,6 +402,9 @@ include("./header.php");
                 ?>
             </form>
         </div>
+    </div>
+
+    <div class="card"> 
 
         <!-- Colour Doser -->
         <div class="form-container">
@@ -446,11 +414,14 @@ include("./header.php");
                 $sql = "SELECT * FROM status_memp WHERE id='27' ";
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
-                echo "<a href='update_memp_status.php?id=$color[id]'>Colour Doser</a>";
+                echo "<a href='update_memp_status.php?id=$color[id]'>Colour Doser<br></a>";
                 echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
+    </div>
+
+    <div class="card"> 
 
         <!-- Compressor I-->
         <div class="form-container">
@@ -494,113 +465,45 @@ include("./header.php");
             </form>
         </div>
 
-        <!-- Shutter Beading -->
+    </div>
+    <div class="card"> 
+        <!-- Crusher -->
         <div class="form-container">
-            <form id="materialRubberBuildingAForm">
+            <form id="crusherForm">
                 <?php
                 include 'config.php';
-                $sql = "SELECT * FROM status_memp WHERE id='6' ";
+                $sql = "SELECT * FROM status_memp WHERE id='5' ";
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
-                echo "<a href='update_memp_status.php?id=$color[id]'>Shutter Beading</a>";
+                echo "<a href='update_memp_status.php?id=$color[id]'>Crusher</a>";
                 echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
 
-        <!--Cover Beading -->
+        <!-- Gantry Crane -->
         <div class="form-container">
-            <form id="materialRubberBuildingBForm">
+            <form id="crusherForm">
                 <?php
                 include 'config.php';
-                $sql = "SELECT * FROM status_memp WHERE id='7' ";
+                $sql = "SELECT * FROM status_memp WHERE id='25' ";
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
-                echo "<a href='update_memp_status.php?id=$color[id]'>Cover Beading</a>";
+                echo "<a href='update_memp_status.php?id=$color[id]'>Gantry Crane</a>";
                 echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
         </div>
 
-        <!-- Polycarbonate -->
+        <!-- Diesel Generator -->
         <div class="form-container">
-            <form id="polycarbonateForm">
+            <form id="crusherForm">
                 <?php
                 include 'config.php';
-                $sql = "SELECT * FROM status_memp WHERE id='8' ";
+                $sql = "SELECT * FROM status_memp WHERE id='26' ";
                 $result = mysqli_query($connection, $sql);
                 $color = $result->fetch_assoc();
-                echo "<a href='update_memp_status.php?id=$color[id]'>Polycarbonate</a>";
-                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
-                ?>
-            </form>
-        </div>
-
-        <!-- Master Batch -->
-        <div class="form-container">
-            <form id="masterBatchForm">
-                <?php
-                include 'config.php';
-                $sql = "SELECT * FROM status_memp WHERE id='9' ";
-                $result = mysqli_query($connection, $sql);
-                $color = $result->fetch_assoc();
-                echo "<a href='update_memp_status.php?id=$color[id]'>Master Batch</a>";
-                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
-                ?>
-            </form>
-        </div>
-
-        <!-- Spring -->
-        <div class="form-container">
-            <form id="springForm">
-                <?php
-                include 'config.php';
-                $sql = "SELECT * FROM status_memp WHERE id='10' ";
-                $result = mysqli_query($connection, $sql);
-                $color = $result->fetch_assoc();
-                echo "<a href='update_memp_status.php?id=$color[id]'>Spring</a>";
-                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
-                ?>
-            </form>
-        </div>
-
-        <!-- Scotch Tape (Sellotape) -->
-        <div class="form-container">
-            <form id="scotchTapeForm">
-                <?php
-                include 'config.php';
-                $sql = "SELECT * FROM status_memp WHERE id='11' ";
-                $result = mysqli_query($connection, $sql);
-                $color = $result->fetch_assoc();
-                echo "<a href='update_memp_status.php?id=$color[id]'>Scotch Tape (Sellotape)</a>";
-                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
-                ?>
-            </form>
-        </div>
-
-        <!-- Corrugated Box -->
-        <div class="form-container">
-            <form id="corrugatedBoxForm">
-                <?php
-                include 'config.php';
-                $sql = "SELECT * FROM status_memp WHERE id='12' ";
-                $result = mysqli_query($connection, $sql);
-                $color = $result->fetch_assoc();
-                echo "<a href='update_memp_status.php?id=$color[id]'>Corrugated Box</a>";
-                echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
-                ?>
-            </form>
-        </div>
-
-        <!-- Safety Gear -->
-        <div class="form-container">
-            <form id="safetyGearForm">
-                <?php
-                include 'config.php';
-                $sql = "SELECT * FROM status_memp WHERE id='13' ";
-                $result = mysqli_query($connection, $sql);
-                $color = $result->fetch_assoc();
-                echo "<a href='update_memp_status.php?id=$color[id]'>Safety Gear</a>";
+                echo "<a href='update_memp_status.php?id=$color[id]'>Diesel Generator</a>";
                 echo "<input style='background-color :" . $color['color'] . ";' type='text'>";
                 ?>
             </form>
