@@ -221,7 +221,7 @@ include("./header.php");
 
     <div class="row">
         <div class="cell">
-            <h2 style="margin-bottom: 30px;">Memp Generation</h2>
+            <h2 style="margin-bottom: 30px;">Meter Enclosure Dispatch</h2>
             <div id="chart2" style="margin-bottom: 50px;"></div>
         </div>
     </div>
