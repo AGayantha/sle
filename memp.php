@@ -219,8 +219,69 @@ include("./header.php");
         </tfoot>
     </table>
 
+    <div class="row">
+        <div class="cell">
+            <h2 style="margin-bottom: 30px;">Memp Generation</h2>
+            <div id="chart2" style="margin-bottom: 50px;"></div>
+        </div>
+    </div>
 
-    <div id="curve_chart" class="curve_chart"></div>
+    <?php
+    include 'config.php';
+
+    $sql = "SELECT date, dispatch
+    FROM (
+        SELECT id, date, dispatch
+        FROM memp
+        ORDER BY date DESC
+        LIMIT 10
+    ) sub
+    ORDER BY date ASC";
+
+    $result = $connection->query($sql);
+
+    if ($result->num_rows > 0) {
+        $data = array();
+        $labels = [];
+        $points = [];
+
+        while ($row = $result->fetch_assoc()) {
+            $labels[] = date('M d', strtotime($row['date'])); 
+            $points[] = (int) $row['dispatch']; 
+        }
+
+        $chartData = [
+            'labels' => $labels,
+            'points' => $points
+        ];
+        echo "<script>const chartData = " . json_encode($chartData) . ";</script>";
+    } 
+
+    $connection->close();
+?>
+
+    <script>
+        const {
+            Chart
+        } = SingleDivUI;
+
+        const options = {
+            data: {
+                labels: chartData.labels, 
+                series: {
+                    points: chartData.points 
+                }
+            },
+            height: 400,
+            width: 1050
+        };
+
+        new Chart('#chart2', {
+            type: 'bar',
+            ...options
+        });
+    </script>
+    <!-- <div id="curve_chart" class="curve_chart"></div> -->
 
     <!-- item status Start -->
     <!-- card Start -->

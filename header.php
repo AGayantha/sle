@@ -13,6 +13,8 @@ if (isset($_SESSION["name"])) {
     <link rel="stylesheet" href="./css/dashboard.css" />
     <link rel="stylesheet" href="./css/plant.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://unpkg.com/singledivui/dist/singledivui.min.css" rel="stylesheet" />
+    <script src="https://unpkg.com/singledivui/dist/singledivui.min.js"></script>
     <script src="https://kit.fontawesome.com/f65110973c.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/main.js"></script>

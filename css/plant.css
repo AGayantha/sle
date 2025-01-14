@@ -281,6 +281,20 @@
     color: #232E3E;
   }
   }
+
+  .row {
+		display: flex;
+	}
+
+	.cell {
+		padding: 0px 35px;
+	}
+
+  .sd-chart {
+    --grid-line-color :#1c29412e !important;
+    --bar-color:#5946C0 !important;
+  }
+
   /* item status end */
   
   /* End daduruoya css */
